@@ -11,11 +11,11 @@ export class CompWelcomeBanner {
       <div class="banner">
         <div class="banner-background"></div>
         <div class="banner-content">
-          <h2>hello,</h2>
-          <h3>
+          <div class="title">hello,</div>
+          <h2>
             I'm Vicki, a software engineer passionate about accessibility.
             She/her.
-          </h3>
+          </h2>
         </div>
         <div class="banner-profile-background"></div>
         <div class="banner-profile"></div>

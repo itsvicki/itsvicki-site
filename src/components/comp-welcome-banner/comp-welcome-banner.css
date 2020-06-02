@@ -46,7 +46,7 @@
   }
 }
 
-.banner-content h2 {
+.banner-content .title {
   grid-column: 1 / -1;
   grid-row: 1 / 5;
 
@@ -62,7 +62,7 @@
   animation-name: slidein;
 }
 
-.banner-content h3 {
+.banner-content h2 {
   grid-column: 2 / -1;
   grid-row: 4 / 7;
 
