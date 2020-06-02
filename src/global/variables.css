@@ -1,0 +1,20 @@
+:root {
+  /* https://fonts.google.com/specimen/Cedarville+Cursive */
+  --handwritten-font-family: "cedarvilleCursive", Open Sans, sans-serif;
+
+  --primary-pink: #e6d7d6;
+}
+
+/* 
+  Uses translate rather than width/margin as they can cause performance issues
+  - https://www.html5rocks.com/en/tutorials/speed/high-performance-animations
+ */
+@keyframes slidein {
+  from {
+    transform: translate(-200%);
+  }
+
+  to {
+    transform: translate(0);
+  }
+}

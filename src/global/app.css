@@ -8,9 +8,44 @@
   Any global CSS variables should also be applied here.
 */
 
+@font-face {
+  font-family: "cedarvilleCursive";
+  src: url("/assets/fonts/Cedarville_Cursive/CedarvilleCursive-Regular.ttf");
+}
+
+@import "./variables.css";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-style: normal;
+  color: inherit;
+  text-decoration: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
 
 body {
   margin: 0px;
   padding: 0px;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-family: Open Sans, Arial, sans-serif;
+  color: #323a45;
+  /*font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";*/
 }
