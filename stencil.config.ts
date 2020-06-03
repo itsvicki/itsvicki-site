@@ -1,20 +1,18 @@
-import { Config } from '@stencil/core';
+import {Config} from "@stencil/core";
 
 // https://stenciljs.com/docs/config
 
 export const config: Config = {
-  globalStyle: 'src/global/app.css',
-  globalScript: 'src/global/app.ts',
-  taskQueue: 'async',
+  globalStyle: "src/global/app.css",
+  globalScript: "src/global/app.ts",
+  taskQueue: "async",
   outputTargets: [
     {
-      type: 'www',
-      copy: [
-        {src: 'assets/fonts'},
-      ]
+      type: "www",
+      copy: [{src: "assets/img"}],
       // comment the following line to disable service workers in production
       serviceWorker: null,
-      baseUrl: 'https://myapp.local/'
-    }
-  ]
+      baseUrl: "https://itsvicki.dev/",
+    },
+  ],
 };
