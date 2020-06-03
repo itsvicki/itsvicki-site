@@ -1,4 +1,4 @@
-# Canny.dev
+# itsvicki.dev
 
 ## Getting Started
 
