@@ -1,8 +1,9 @@
 :root {
-  /* https://fonts.google.com/specimen/Cedarville+Cursive */
-  --handwritten-font-family: "cedarvilleCursive", Open Sans, sans-serif;
+  --primary-font-family: "Montserrat", Open Sans, sans-serif;
 
-  --primary-pink: #e6d7d6;
+  --primary-pink: #dcc6bb; /*--primary-pink: #e6d7d6;*/
+  --primary-yellow: #f9bb01;
+  --primary-black: #323a45;
 }
 
 /* 
@@ -17,4 +18,51 @@
   to {
     transform: translate(0);
   }
+}
+
+/*
+  Fonts
+*/
+p,
+a {
+  font-family: var(--primary-font-family);
+  color: var(--primary-black);
+  font-size: 1em;
+
+  margin: 0.8em 0;
+}
+
+h2 {
+  text-transform: uppercase;
+  line-height: 1.5em;
+  letter-spacing: 0.25em;
+  font-size: 0.8em;
+  font-family: var(--primary-font-family);
+
+  margin: 0.8em 0;
+}
+
+/*
+h2:before {
+  display: block;
+  position: absolute;
+  content: "";
+
+  bottom: -0.4em;
+  left: 0;
+  z-index: -1;
+
+  height: 0.2em;
+  width: 100%;
+
+  background-color: var(--primary-yellow);
+} */
+
+.screen-reader-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }

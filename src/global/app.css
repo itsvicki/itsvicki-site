@@ -44,8 +44,6 @@ html {
 body {
   margin: 0px;
   padding: 0px;
-  font-family: Open Sans, Arial, sans-serif;
-  color: #323a45;
-  /*font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";*/
+  font-family: var(--primary-font-family);
+  color: var(--primary-black);
 }
