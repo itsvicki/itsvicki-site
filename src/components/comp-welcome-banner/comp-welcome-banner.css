@@ -40,11 +40,11 @@
   text-transform: uppercase;
 }
 
-.content-inner p:first-of-type {
+.content-inner .introduction p:first-of-type {
   margin-top: 0;
 }
 
-.content-inner p:last-of-type {
+.content-inner .quick-links {
   margin-bottom: 0;
 }
 
