@@ -10,19 +10,22 @@ import {githubUrl, linkedInUrl} from "../../global/site-structure-utils";
 export class CompWelcomeBanner {
   render() {
     return (
-      <div class="banner">
+      <section class="banner">
         <div class="content">
-          <div class="content-inner">
-            <div class="title">Oh Hey!</div>
-            <h2 class="introduction">
-              I'm Vicki, a software engineer passionate about accessibility.
-              <br />
-              She/her.
-            </h2>
+          <div class="content-inner space-text">
+            <h1 class="screen-reader-only">Introduction</h1>
+            <div class="introduction">
+              <p>Oh Hey!</p>
+              <p>
+                I'm Vicki, a software engineer passionate about accessibility.
+                <br />
+                She/her.
+              </p>
+            </div>
             <stencil-route-link url="/about" anchorClass="more">
               Get to know me
             </stencil-route-link>
-            <div class="quick-links">
+            <p class="quick-links">
               <span>Quick links:</span>
               <a href={githubUrl} class="github" target="_blank" rel="noopener">
                 <span class="screen-reader-only">Vicki's Github page</span>
@@ -35,7 +38,7 @@ export class CompWelcomeBanner {
               >
                 <span class="screen-reader-only">Vicki's LinkedIn page</span>
               </a>
-            </div>
+            </p>
           </div>
         </div>
         <div class="selfie">
@@ -50,7 +53,7 @@ export class CompWelcomeBanner {
         </div>
         <div class="watercolour-1"></div>
         <div class="watercolour-2"></div>
-      </div>
+      </section>
     );
   }
 }

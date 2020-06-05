@@ -12,14 +12,6 @@ describe("comp-welcome-banner", () => {
     expect(element).toHaveClass("hydrated");
   });
 
-  it("contains a welcome banner with title", async () => {
-    const page = await newE2EPage();
-    await page.setContent("<comp-welcome-banner></comp-welcome-banner>");
-
-    const element = await page.find("comp-welcome-banner >>> .content .title");
-    expect(element.textContent).toEqual("Oh Hey!");
-  });
-
   it("contains a welcome banner with introduction", async () => {
     const page = await newE2EPage();
     await page.setContent("<comp-welcome-banner></comp-welcome-banner>");
@@ -28,7 +20,7 @@ describe("comp-welcome-banner", () => {
       "comp-welcome-banner >>> .content .introduction"
     );
     expect(element.textContent).toEqual(
-      "I'm Vicki, a software engineer passionate about accessibility.She/her."
+      "Oh Hey!I'm Vicki, a software engineer passionate about accessibility.She/her."
     );
   });
 

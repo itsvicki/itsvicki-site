@@ -1,9 +1,10 @@
 :root {
-  --primary-font-family: "Montserrat", Open Sans, sans-serif;
+  --primary-font-family: "Cormorant Garamond", Open Sans, sans-serif;
 
-  --primary-pink: #dcc6bb; /*--primary-pink: #e6d7d6;*/
+  --primary-pink: #dcc6bb;
   --primary-yellow: #f9bb01;
   --primary-black: #323a45;
+  --primary-blue: #4f7a8c;
 }
 
 /* 
@@ -28,15 +29,20 @@ a {
   font-family: var(--primary-font-family);
   color: var(--primary-black);
   font-size: 1em;
+  line-height: 1.5em;
+  margin: 1.5em 0;
+}
 
-  margin: 0.8em 0;
+.space-text p,
+.space-text a {
+  letter-spacing: 0.1em;
 }
 
 h2 {
   text-transform: uppercase;
   line-height: 1.5em;
   letter-spacing: 0.25em;
-  font-size: 0.8em;
+  font-size: 1em;
   font-family: var(--primary-font-family);
   font-weight: 100;
 
