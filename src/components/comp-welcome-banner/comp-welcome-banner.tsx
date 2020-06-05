@@ -21,6 +21,7 @@ export class CompWelcomeBanner {
                 <br />
                 She/her.
               </p>
+              <p>Welcome to my portfolio site.</p>
             </div>
             <stencil-route-link url="/about" anchorClass="more">
               Get to know me
