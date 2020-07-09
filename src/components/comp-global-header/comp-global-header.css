@@ -1,0 +1,52 @@
+@import "../../global/variables.css";
+
+/*
+  Skip link
+*/
+a.skip-main {
+  left: -999px;
+  position: absolute;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -999;
+}
+
+a.skip-main:focus,
+a.skip-main:active {
+  display: block;
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+/*
+  Nav
+*/
+header nav {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  margin: 2em 1em;
+}
+
+nav a {
+  text-transform: lowercase;
+  text-decoration: none;
+  padding: 0 1em;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav a.active {
+  color: var(--primary-blue);
+}
