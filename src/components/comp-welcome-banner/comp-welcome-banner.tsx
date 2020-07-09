@@ -15,7 +15,7 @@ export class CompWelcomeBanner {
           <div class="content-inner space-text">
             <h1 class="screen-reader-only">Introduction</h1>
             <div class="introduction">
-              <p>Oh Hey!</p>
+              <p>Hej hej!</p>
               <p>
                 I'm Vicki, a software engineer passionate about accessibility.
                 <br />
