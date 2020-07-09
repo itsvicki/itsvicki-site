@@ -9,7 +9,7 @@ export class AppRoot {
   render() {
     return (
       <div>
-        {/* <header></header> */}
+        <comp-global-header></comp-global-header>
 
         <main>
           <stencil-router>

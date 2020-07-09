@@ -16,6 +16,8 @@ export namespace Components {
     }
     interface AppRoot {
     }
+    interface CompGlobalHeader {
+    }
     interface CompWelcomeBanner {
     }
 }
@@ -44,6 +46,12 @@ declare global {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
     };
+    interface HTMLCompGlobalHeaderElement extends Components.CompGlobalHeader, HTMLStencilElement {
+    }
+    var HTMLCompGlobalHeaderElement: {
+        prototype: HTMLCompGlobalHeaderElement;
+        new (): HTMLCompGlobalHeaderElement;
+    };
     interface HTMLCompWelcomeBannerElement extends Components.CompWelcomeBanner, HTMLStencilElement {
     }
     var HTMLCompWelcomeBannerElement: {
@@ -55,6 +63,7 @@ declare global {
         "app-home": HTMLAppHomeElement;
         "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
+        "comp-global-header": HTMLCompGlobalHeaderElement;
         "comp-welcome-banner": HTMLCompWelcomeBannerElement;
     }
 }
@@ -68,6 +77,8 @@ declare namespace LocalJSX {
     }
     interface AppRoot {
     }
+    interface CompGlobalHeader {
+    }
     interface CompWelcomeBanner {
     }
     interface IntrinsicElements {
@@ -75,6 +86,7 @@ declare namespace LocalJSX {
         "app-home": AppHome;
         "app-profile": AppProfile;
         "app-root": AppRoot;
+        "comp-global-header": CompGlobalHeader;
         "comp-welcome-banner": CompWelcomeBanner;
     }
 }
@@ -86,6 +98,7 @@ declare module "@stencil/core" {
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
             "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "comp-global-header": LocalJSX.CompGlobalHeader & JSXBase.HTMLAttributes<HTMLCompGlobalHeaderElement>;
             "comp-welcome-banner": LocalJSX.CompWelcomeBanner & JSXBase.HTMLAttributes<HTMLCompWelcomeBannerElement>;
         }
     }
