@@ -1,23 +1,136 @@
 import {Component, h} from "@stencil/core";
 
+import {QAndAInterface} from "../../global/definitions/definitions";
+
 @Component({
   tag: "app-about",
   styleUrl: "app-about.css",
   shadow: true,
 })
 export class AppAbout {
-  private toggleTile = (env) => {
-    env.preventDefault();
-    const el = env.currentTarget;
-
-    // Hide the question
-    el.setAttribute("aria-hidden", true);
-
-    // Show the answer
-    if (el.nextSibling) el.nextSibling.setAttribute("aria-hidden", false);
+  // TODO: Fix the quote HTML
+  private qAndAData: QAndAInterface = {
+    questions: [
+      {
+        id: 1,
+        background: false,
+        questionHypertext: [
+          "p",
+          null,
+          ["span", null, "Cuppa tea or coffee?"],
+          ["span", {class: "icon tea"}, ""],
+          ["span", {class: "icon coffee"}, ""],
+        ],
+        answerHypertext: ["p", null, "I love you a whole latte. &hearts;"],
+      },
+      {
+        id: 2,
+        background: true,
+        questionHypertext: [
+          "div",
+          {
+            class: "shout",
+          },
+          ["span", null, "Action "],
+          [
+            "span",
+            {
+              class: "em",
+            },
+            "or ",
+          ],
+          ["span", null, "romcom?"],
+        ],
+        answerHypertext: [
+          "div",
+          null,
+          ["p", null, "Action any day."],
+          [
+            "p",
+            null,
+            "I could probably count the romcom's I've seen on one hand.",
+          ],
+        ],
+      },
+      {
+        id: 3,
+        background: false,
+        questionHypertext: [
+          "div",
+          null,
+          ["p", null, "Favourite holiday destination?"],
+          [
+            "ol",
+            null,
+            ["li", null, "Murcia, Spain"],
+            ["li", null, "Reykjavík, Iceland"],
+            ["li", null, "Disney World, Florida"],
+          ],
+        ],
+        answerHypertext: [
+          "div",
+          null,
+          [
+            "p",
+            null,
+            ["span", null, "Disney!"],
+            ["q", null, "It's kind of fun to do the impossible."],
+            ["span", null, "- Walt Disney"],
+          ],
+        ],
+      },
+      {
+        id: 4,
+        background: false,
+        questionHypertext: [
+          "div",
+          null,
+          ["span", null, "React"],
+          ["span", {class: "em"}, "or"],
+          ["span", null, "Anguar?"],
+        ],
+        answerHypertext: ["div", null, "React."],
+      },
+      {
+        id: 5,
+        background: false,
+        questionHypertext: [
+          "div",
+          null,
+          ["span", null, "Chad kroeger"],
+          ["span", {class: "em"}, "or"],
+          ["span", null, "Jason Aldean?"],
+        ],
+        answerHypertext: [
+          "div",
+          null,
+          "Both! Because my music taste is impeccable.",
+        ],
+      },
+      {
+        id: 6,
+        background: true,
+        questionHypertext: ["div", null, "fact six?"],
+        answerHypertext: ["div", null, "Answer 6"],
+      },
+    ],
+    facts: [
+      {
+        id: 1,
+        quote:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam molestie consectetur nisi eu gravida. Fusce vulputate ante vitae diam luctus pretium. Nulla tortor mauris, dictum id consectetur et, vehicula eget mauris. Duis in mollis tellus. Donec vitae orci quam. Nunc quis dolor vel risus efficitur suscipit quis quis diam.",
+      },
+      {
+        id: 2,
+        quote:
+          "Cras vel dolor non velit egestas congue. Etiam sed dignissim metus. Nulla vitae dolor eget augue gravida euismod. Maecenas vehicula nec nisi ut finibus. Etiam fermentum lorem nec mauris molestie, sed suscipit ligula ultrices. Donec luctus neque urna, id luctus justo finibus ac. Sed interdum dapibus felis, in posuere lorem imperdiet auctor.",
+      },
+    ],
   };
 
   render() {
+    const qAndAData = this.qAndAData;
+
     return (
       <host>
         <h1>Get to know me</h1>
@@ -25,89 +138,7 @@ export class AppAbout {
         <p>Let's start off with a bit of fun.</p>
         <h2>Take a guess...</h2>
 
-        <div class="fun-facts">
-          <div class="fact fact-one">
-            <a
-              class="question tile-trigger"
-              href=""
-              onClick={this.toggleTile.bind(this)}
-            >
-              Cuppa tea <br />
-              or coffee?
-              <span class="icon tea"></span>
-              <span class="icon coffee"></span>
-            </a>
-            <div class="answer tile-modal" aria-hidden="true">
-              I love you a whole latte. <br />
-              &hearts;
-            </div>
-          </div>
-          <div class="fact fact-two background">
-            <a
-              class="question tile-trigger"
-              href=""
-              onClick={this.toggleTile.bind(this)}
-            >
-              <span class="action">Action</span>
-              <span class="em">or</span>
-              <span class="romcom">romcom?</span>
-            </a>
-            <div class="answer" aria-hidden="true">
-              Action any day.
-              <br />
-              <br />I could probably count the romcom's I've seen on one hand.
-            </div>
-          </div>
-          <div class="fact fact-three">
-            <a
-              class="question tile-trigger"
-              href=""
-              onClick={this.toggleTile.bind(this)}
-            >
-              Favourite holiday destination?
-              <ol>
-                <li>Murcia, Spain</li>
-                <li>Reykjavík, Iceland</li>
-                <li>Disney World, Florida</li>
-              </ol>
-            </a>
-            <div class="answer" aria-hidden="true">
-              Disney!
-              <quote>
-                It's kind of fun to do the impossible.
-                <cite>- Walt Disney</cite>
-              </quote>
-            </div>
-          </div>
-          <div class="fact fact-four">
-            <div class="question">
-              white wine <br />
-              <span class="em">or</span>
-              disaronno... on the rocks?
-            </div>
-            <div class="answer" aria-hidden="true">
-              Disaronno, although I won't say no to wine either if you're
-              buying.
-            </div>
-          </div>
-          <div class="fact fact-five">
-            <div class="question">
-              Chad kroeger
-              <span class="em">or</span>
-              Jason Aldean?
-            </div>
-            <div class="answer" aria-hidden="true">
-              Both! <br />
-              Because my music taste is impeccable.
-            </div>
-          </div>
-          <div class="fact fact-six">
-            <div class="question">fact six?</div>
-            <div class="answer" aria-hidden="true">
-              Answer 6
-            </div>
-          </div>
-        </div>
+        <comp-tiles qAndAData={qAndAData}></comp-tiles>
       </host>
     );
   }

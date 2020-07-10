@@ -17,7 +17,8 @@ export class CompWelcomeBanner {
             <div class="introduction">
               <p>Hej hej!</p>
               <p>
-                I'm Vicki, a software engineer passionate about accessibility.
+                I'm Vicki, a software engineer/manager passionate about
+                accessibility.
                 <br />
                 She/her.
               </p>

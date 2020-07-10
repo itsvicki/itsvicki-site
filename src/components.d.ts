@@ -6,6 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { MatchResults, } from "@stencil/router";
+import { FactInterface, QAndAInterface, } from "./global/definitions/definitions";
 export namespace Components {
     interface AppAbout {
     }
@@ -16,7 +17,14 @@ export namespace Components {
     }
     interface AppRoot {
     }
+    interface CompFactCarousel {
+        "compTitle": string;
+        "facts": FactInterface[];
+    }
     interface CompGlobalHeader {
+    }
+    interface CompTiles {
+        "qAndAData": QAndAInterface;
     }
     interface CompWelcomeBanner {
     }
@@ -46,11 +54,23 @@ declare global {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
     };
+    interface HTMLCompFactCarouselElement extends Components.CompFactCarousel, HTMLStencilElement {
+    }
+    var HTMLCompFactCarouselElement: {
+        prototype: HTMLCompFactCarouselElement;
+        new (): HTMLCompFactCarouselElement;
+    };
     interface HTMLCompGlobalHeaderElement extends Components.CompGlobalHeader, HTMLStencilElement {
     }
     var HTMLCompGlobalHeaderElement: {
         prototype: HTMLCompGlobalHeaderElement;
         new (): HTMLCompGlobalHeaderElement;
+    };
+    interface HTMLCompTilesElement extends Components.CompTiles, HTMLStencilElement {
+    }
+    var HTMLCompTilesElement: {
+        prototype: HTMLCompTilesElement;
+        new (): HTMLCompTilesElement;
     };
     interface HTMLCompWelcomeBannerElement extends Components.CompWelcomeBanner, HTMLStencilElement {
     }
@@ -63,7 +83,9 @@ declare global {
         "app-home": HTMLAppHomeElement;
         "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
+        "comp-fact-carousel": HTMLCompFactCarouselElement;
         "comp-global-header": HTMLCompGlobalHeaderElement;
+        "comp-tiles": HTMLCompTilesElement;
         "comp-welcome-banner": HTMLCompWelcomeBannerElement;
     }
 }
@@ -77,7 +99,14 @@ declare namespace LocalJSX {
     }
     interface AppRoot {
     }
+    interface CompFactCarousel {
+        "compTitle"?: string;
+        "facts": FactInterface[];
+    }
     interface CompGlobalHeader {
+    }
+    interface CompTiles {
+        "qAndAData": QAndAInterface;
     }
     interface CompWelcomeBanner {
     }
@@ -86,7 +115,9 @@ declare namespace LocalJSX {
         "app-home": AppHome;
         "app-profile": AppProfile;
         "app-root": AppRoot;
+        "comp-fact-carousel": CompFactCarousel;
         "comp-global-header": CompGlobalHeader;
+        "comp-tiles": CompTiles;
         "comp-welcome-banner": CompWelcomeBanner;
     }
 }
@@ -98,7 +129,9 @@ declare module "@stencil/core" {
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
             "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "comp-fact-carousel": LocalJSX.CompFactCarousel & JSXBase.HTMLAttributes<HTMLCompFactCarouselElement>;
             "comp-global-header": LocalJSX.CompGlobalHeader & JSXBase.HTMLAttributes<HTMLCompGlobalHeaderElement>;
+            "comp-tiles": LocalJSX.CompTiles & JSXBase.HTMLAttributes<HTMLCompTilesElement>;
             "comp-welcome-banner": LocalJSX.CompWelcomeBanner & JSXBase.HTMLAttributes<HTMLCompWelcomeBannerElement>;
         }
     }

@@ -20,7 +20,7 @@ describe("comp-welcome-banner", () => {
       "comp-welcome-banner >>> .content .introduction"
     );
     expect(element.textContent).toEqual(
-      "Hej Hej!I'm Vicki, a software engineer passionate about accessibility.She/her.Welcome to my portfolio site."
+      "Hej hej!I'm Vicki, a software engineer/manager passionate about accessibility.She/her.Welcome to my portfolio site."
     );
   });
 

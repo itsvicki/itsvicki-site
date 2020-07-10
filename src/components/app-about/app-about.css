@@ -1,20 +1,22 @@
 @import "../../global/variables.css";
 
 :host {
+  --border-color: rgba(180, 180, 180, 1);
+
   display: block;
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
 }
 
-.fun-facts {
+/* .fun-facts {
   display: grid;
   grid-template-columns: repeat(15, 1fr);
   grid-template-rows: repeat(6, 1fr);
   grid-gap: 1px;
 
   margin: 0 auto;
-  background-color: rgba(180, 180, 180, 1);
+  background-color: var(--border-color);
 }
 
 @media only screen and (min-width: 900px) {
@@ -26,7 +28,6 @@
 .fact {
   position: relative;
 
-  /* Centralise content */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,10 +55,10 @@
 
 .fact .tile-trigger:hover {
   text-decoration: underline;
-}
+} */
 
 /* Custom list styles */
-.fact ol {
+/* .fact ol {
   list-style: none;
   counter-reset: li;
   padding-inline-start: 30px;
@@ -89,25 +90,12 @@
   display: block;
   margin: 0.5em 0;
   font-style: italic;
-}
-
-/* 
-  Answer styles
-*/
-quote {
-  display: block;
-  margin-top: 1em;
-}
-
-quote cite {
-  display: block;
-  font-style: italic;
-}
+} */
 
 /* 
   Fact grid config 
 */
-.fact-one {
+/* .fact-one {
   grid-column: 1 / 6;
   grid-row: 1 / 4;
 
@@ -177,4 +165,31 @@ quote cite {
 .fact-six {
   grid-column: 11 / -1;
   grid-row: 5 / -1;
+} */
+
+/*
+  Quotes
+*/
+/* .facts {
+  display: flex;
+  max-width: 900px;
+  margin: 0 auto;
+
+  border-top: 1px solid var(--border-color);
 }
+
+.facts .heading {
+  display: flex;
+  align-items: center;
+
+  border-right: 1px solid var(--border-color);
+}
+
+.facts h3 {
+  background-color: var(--secondary-pink);
+  margin: 1.5em;
+  padding: 1.5em 2em;
+}
+
+.quote-carousel {
+} */
