@@ -63,6 +63,21 @@ const toHypertext = (data: any) => {
 const findFirstInActiveRoute = (
   selector: string = "h1, h2, h3"
 ): HTMLElement | null => {
+  const recursivelyFindSelector = (
+    selector: string,
+    el: HTMLElement
+  ): HTMLElement | null => {
+    const shadowRoot: ShadowRoot = el.querySelector("*").shadowRoot;
+
+    if (!shadowRoot) return null;
+
+    const target: HTMLElement = shadowRoot.querySelector(selector);
+
+    if (target) return target;
+
+    return recursivelyFindSelector(selector, shadowRoot.querySelector("*"));
+  };
+
   // Not elegant, but only way i could dynamically find the first heading to focus on
   const activeRoute: HTMLElement = document
     .querySelector("app-root")
@@ -73,10 +88,7 @@ const findFirstInActiveRoute = (
     return null;
   }
 
-  const target: HTMLElement = activeRoute
-    .querySelector("*")
-    .shadowRoot.querySelector(selector);
-  return target;
+  return recursivelyFindSelector(selector, activeRoute);
 };
 
 /**
