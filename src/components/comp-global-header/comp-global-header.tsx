@@ -39,13 +39,9 @@ export class CompGlobalHeader implements ComponentInterface {
             >
               03. Projects
             </stencil-route-link>
-            <stencil-route-link
-              url="/thoughts"
-              activeClass="active"
-              exact={true}
-            >
+            <a href="//dev.to/itsvicki" target="_blank" rel="noopener">
               04. Thoughts
-            </stencil-route-link>
+            </a>
           </nav>
         </header>
       </host>

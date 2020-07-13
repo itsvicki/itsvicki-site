@@ -35,12 +35,23 @@ header nav {
   text-align: center;
   flex-wrap: wrap;
   margin: 2em 1em;
+
+  border-bottom: 1px solid var(--primary-grey);
+  padding-bottom: 2em;
+}
+
+@media only screen and (min-width: 700px) {
+  header nav {
+    padding: 0;
+    border: 0 none;
+  }
 }
 
 nav a {
   text-transform: lowercase;
   text-decoration: none;
   padding: 0 1em;
+  margin: 0;
 }
 
 nav a:hover {
