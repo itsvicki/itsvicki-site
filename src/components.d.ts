@@ -18,6 +18,7 @@ export namespace Components {
     interface AppRoot {
     }
     interface CompFactCarousel {
+        "announceItem": boolean;
         "compTitle": string;
         "facts": FactInterface[];
     }
@@ -100,6 +101,7 @@ declare namespace LocalJSX {
     interface AppRoot {
     }
     interface CompFactCarousel {
+        "announceItem"?: boolean;
         "compTitle"?: string;
         "facts": FactInterface[];
     }

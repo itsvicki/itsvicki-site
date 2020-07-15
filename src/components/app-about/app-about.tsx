@@ -21,7 +21,7 @@ export class AppAbout {
           ["span", {class: "icon tea"}, ""],
           ["span", {class: "icon coffee"}, ""],
         ],
-        answerHypertext: ["p", null, "I love you a whole latte. &hearts;"],
+        answerHypertext: ["p", null, "I love you a whole latte."],
       },
       {
         id: 2,
@@ -110,20 +110,20 @@ export class AppAbout {
       {
         id: 6,
         background: true,
-        questionHypertext: ["div", null, "fact six?"],
-        answerHypertext: ["div", null, "Answer 6"],
+        questionHypertext: ["div", null, "Pepsi or coke?"],
+        answerHypertext: ["div", null, "Pepsi!"],
       },
     ],
     facts: [
       {
         id: 1,
         quote:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam molestie consectetur nisi eu gravida. Fusce vulputate ante vitae diam luctus pretium. Nulla tortor mauris, dictum id consectetur et, vehicula eget mauris. Duis in mollis tellus. Donec vitae orci quam. Nunc quis dolor vel risus efficitur suscipit quis quis diam.",
+          "I'm a big multitasker - more often then not it's when i do both by fastest and best work. So much so that in school I would always have to be doodling in class, without, I wouldn't retrain half as much.",
       },
       {
         id: 2,
         quote:
-          "Cras vel dolor non velit egestas congue. Etiam sed dignissim metus. Nulla vitae dolor eget augue gravida euismod. Maecenas vehicula nec nisi ut finibus. Etiam fermentum lorem nec mauris molestie, sed suscipit ligula ultrices. Donec luctus neque urna, id luctus justo finibus ac. Sed interdum dapibus felis, in posuere lorem imperdiet auctor.",
+          "I would say I'm a pretty fast typer - my average speed on typeracer.com is about 100wpm but no hall of fame position yet!",
       },
     ],
   };

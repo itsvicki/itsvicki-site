@@ -32,13 +32,13 @@ export class CompTiles implements ComponentInterface {
           {qAndAData.questions.map((d) => (
             <div class={{tile: true, background: d.background}}>
               <a
-                class="question trigger"
+                class="question trigger front"
                 href=""
                 onClick={this.toggleTile.bind(this)}
               >
                 {toHypertext(d.questionHypertext)}
               </a>
-              <div class="answer tile-modal" aria-hidden="true">
+              <div class="answer back tile-modal" aria-hidden="true">
                 {toHypertext(d.answerHypertext)}
               </div>
             </div>
@@ -49,6 +49,7 @@ export class CompTiles implements ComponentInterface {
           <comp-fact-carousel
             compTitle="Facts"
             facts={qAndAData.facts}
+            announceItem={true}
           ></comp-fact-carousel>
         )}
       </host>
