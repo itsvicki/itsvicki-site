@@ -1,6 +1,7 @@
 import {Component, h, ComponentInterface} from "@stencil/core";
 
 import {moveUserFocusToEl} from "../../global/services/helper.utils";
+import {devToUrl, linkedInUrl} from "../../global/site-structure-utils";
 
 @Component({
   tag: "comp-global-header",
@@ -32,14 +33,10 @@ export class CompGlobalHeader implements ComponentInterface {
             <stencil-route-link url="/about" activeClass="active" exact={true}>
               02. About
             </stencil-route-link>
-            <stencil-route-link
-              url="/projects"
-              activeClass="active"
-              exact={true}
-            >
+            <a href={linkedInUrl} target="_blank" rel="noopener noreferrer">
               03. Projects
-            </stencil-route-link>
-            <a href="//dev.to/itsvicki" target="_blank" rel="noopener">
+            </a>
+            <a href={devToUrl} target="_blank" rel="noopener noreferrer">
               04. Thoughts
             </a>
           </nav>
