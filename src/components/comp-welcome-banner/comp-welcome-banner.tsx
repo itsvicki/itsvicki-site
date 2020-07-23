@@ -15,14 +15,13 @@ export class CompWelcomeBanner {
           <div class="content-inner space-text">
             <h1 class="screen-reader-only">Introduction</h1>
             <div class="introduction">
-              <p>Hej hej!</p>
+              <p class="emphasis">Hej hej!</p>
               <p>
                 I'm Vicki, a software engineer/manager passionate about
                 accessibility.
                 <br />
                 She/her.
               </p>
-              <p>Welcome to my portfolio site.</p>
             </div>
             <stencil-route-link url="/about" anchorClass="more">
               Get to know me
@@ -43,18 +42,17 @@ export class CompWelcomeBanner {
             </p>
           </div>
         </div>
-        <div class="selfie">
-          {/* TODO: Add alt content */}
+        <div class="moi">
+          {/* TODO: Add alt content & add low res version. Also change this for a more landscape img */}
           <picture>
             <source
               media="(min-width: 600px)"
-              srcSet="/assets/img/selfie.jpg"
+              srcSet="/assets/img/selfie-new.jpg"
             />
-            <img src="/assets/img/selfie-small.jpg" alt="" />
+            <img src="/assets/img/selfie-new.jpg" alt="" />
           </picture>
         </div>
-        <div class="watercolour-1"></div>
-        <div class="watercolour-2"></div>
+        <div class="watercolour"></div>
       </section>
     );
   }
