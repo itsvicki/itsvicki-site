@@ -19,3 +19,8 @@
     max-width: 1200px;
   }
 }
+
+.tiles {
+  max-width: 60em;
+  margin: 0 auto;
+}

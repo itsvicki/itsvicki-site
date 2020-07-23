@@ -56,7 +56,7 @@ export class AppAbout {
         id: 3,
         background: false,
         questionHypertext: [
-          "div",
+          "span",
           null,
           ["p", null, "Favourite holiday destination?"],
           [
@@ -104,14 +104,20 @@ export class AppAbout {
         answerHypertext: [
           "div",
           null,
-          "Both! Because my music taste is impeccable.",
+          "Both, because my music taste is impeccable.",
         ],
       },
       {
         id: 6,
         background: true,
-        questionHypertext: ["div", null, "Pepsi or coke?"],
-        answerHypertext: ["div", null, "Pepsi!"],
+        questionHypertext: [
+          "div",
+          null,
+          ["span", null, "Pepsi"],
+          ["span", {class: "em"}, "or"],
+          ["span", null, "Coca-Cola?"],
+        ],
+        answerHypertext: ["p", null, "Pepsi!"],
       },
     ],
     facts: [
@@ -133,12 +139,14 @@ export class AppAbout {
 
     return (
       <host>
-        <h1>Get to know me</h1>
+        <h1>GET TO KNOW ME</h1>
 
         <p>Let's start off with a bit of fun.</p>
         <h2>Take a guess...</h2>
 
-        <comp-tiles qAndAData={qAndAData}></comp-tiles>
+        <div class="tiles">
+          <comp-tiles qAndAData={qAndAData}></comp-tiles>
+        </div>
       </host>
     );
   }

@@ -30,16 +30,18 @@ export class CompTiles implements ComponentInterface {
       <host>
         <div class="container">
           {qAndAData.questions.map((d) => (
-            <div class={{tile: true, background: d.background}}>
-              <a
-                class="question trigger front"
-                href=""
-                onClick={this.toggleTile.bind(this)}
-              >
-                {toHypertext(d.questionHypertext)}
-              </a>
-              <div class="answer back tile-modal" aria-hidden="true">
-                {toHypertext(d.answerHypertext)}
+            <div class="tile">
+              <div class={{background: d.background}}>
+                <a
+                  class="question trigger front"
+                  href=""
+                  onClick={this.toggleTile.bind(this)}
+                >
+                  {toHypertext(d.questionHypertext)}
+                </a>
+                <div class="answer back tile-modal" aria-hidden="true">
+                  {toHypertext(d.answerHypertext)}
+                </div>
               </div>
             </div>
           ))}

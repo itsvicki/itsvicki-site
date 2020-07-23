@@ -1,7 +1,25 @@
 @import "../../global/variables.css";
 
 :host {
-  --border-color: var(--primary-grey);
+  --border-color: var(--secondary-grey);
+
+  --heading-background-colour: var(--secondary-pink);
+  --heading-font-size: var(--default-font-size);
+  --heading-font-weight: normal;
+  --heading-colour: var(--p-colour);
+  --heading-padding: 1.5em 2em;
+  --heading-text-transform: uppercase;
+}
+
+@media (prefers-color-scheme: dark) {
+  :host {
+    --heading-background-colour: transparent;
+    --heading-font-size: 1.1em;
+    --heading-font-weight: bold;
+    --heading-colour: var(--secondary-blue);
+    --heading-padding: 1em 1em;
+    --heading-text-transform: uppercase;
+  }
 }
 
 .container {
@@ -35,9 +53,18 @@
 }
 
 .heading h3 {
-  background-color: var(--secondary-pink);
-  /* margin: 1.5em 1.5em 0 1.5em; */
-  padding: 1.5em 2em;
+  background-color: var(--heading-background-colour);
+  padding: var(--heading-padding);
+  text-transform: var(--heading-text-transform);
+  font-size: var(--heading-font-size);
+  font-weight: var(--heading-font-weight);
+  color: var(--heading-colour);
+
+  /* padding: 1em 2em;
+  color: var(--h1-colour);
+  margin: 1.5em 1.5em 0 1.5em;
+  font-size: 18px;
+  line-height: 1em; */
 }
 
 @media only screen and (min-width: 700px) {
