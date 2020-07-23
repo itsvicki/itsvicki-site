@@ -1,24 +1,60 @@
 :root {
-  --primary-pink: #dcc6bb;
-  --secondary-pink: #e4dedf;
-  --primary-yellow: #f9bb01;
+  --primary-orange: #c17f38;
   --primary-black: #323a45;
-  --primary-grey: #b4b4b4;
-  --primary-blue: #4f7a8c;
-  --primary-orange: #7b4d1e;
-  --body-color: #ffffff;
+  --primary-white: #ffffff;
+  --secondary-white: #f7f7f7;
+
+  /* Dark mode */
+  --primary-grey: #292929;
+
+  /* Carousel */
+  --secondary-pink: #e4dedf;
+  --secondary-blue: #93b3c2;
+  --secondary-grey: #b4b4b4;
+
+  --main-background: var(--secondary-white);
+
+  --nav-link-colour: var(--primary-black);
+  --nav-active-link-colour: var(--primary-orange);
+
+  --h1-colour: var(--primary-orange);
+  --h2-colour: var(--primary-orange);
+  --h3-colour: var(--primary-black);
+  --p-colour: var(--primary-black);
+  --p-contrast-colour: var(--primary-black);
 
   --primary-font-family: "Cormorant Garamond", Open Sans, sans-serif;
   --default-font-size: 1em;
-  --h1-font-size: 1.4em;
+  --h1-font-size: 1.6em;
   --h2-font-size: 1.2em;
   --h3-font-size: 1em;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-orange: #daaf81;
+
+    --main-background: var(--primary-grey);
+    --nav-link-colour: var(--primary-white);
+    --p-colour: var(--primary-white);
+
+    /*--nav-active-link-colour: var(--secondary-blue);
+
+    --h1-colour: var(--secondary-blue);
+    --h2-colour: var(--secondary-blue);
+    --h3-colour: var(--primary-white); */
+  }
+
+  img,
+  picture {
+    filter: brightness(0.8) contrast(1.1);
+  }
 }
 
 h1 {
   font-size: var(--h1-font-size);
   font-family: var(--primary-font-family);
-  color: var(--primary-blue);
+  color: var(--h1-colour);
   line-height: 1.5em;
   font-weight: bold;
   text-transform: uppercase;
@@ -30,7 +66,7 @@ h1 {
 h2 {
   font-size: var(--h2-font-size);
   font-family: var(--primary-font-family);
-  color: var(--primary-blue);
+  color: var(--h2-colour);
   line-height: 1.5em;
   font-weight: 100;
   text-transform: lowercase;
@@ -42,7 +78,7 @@ h2 {
 h3 {
   font-size: var(--h3-font-size);
   font-family: var(--primary-font-family);
-  color: var(--primary-black);
+  color: var(--h3-colour);
   line-height: 1.5em;
   font-weight: 100;
   text-transform: lowercase;
@@ -55,7 +91,7 @@ p,
 a {
   font-family: var(--primary-font-family);
   font-size: var(--default-font-size);
-  color: var(--primary-black);
+  color: var(--p-colour);
   line-height: 1.5em;
   margin: 1.5em 0;
 }
