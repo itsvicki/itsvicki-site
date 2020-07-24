@@ -43,14 +43,8 @@ export class CompWelcomeBanner {
           </div>
         </div>
         <div class="moi">
-          {/* TODO: Add alt content & add low res version. Also change this for a more landscape img */}
-          <picture>
-            <source
-              media="(min-width: 600px)"
-              srcSet="/assets/img/selfie-new.jpg"
-            />
-            <img src="/assets/img/selfie-new.jpg" alt="" />
-          </picture>
+          {/* TODO: Add alt content & change this for a more landscape img? */}
+          <img src="/assets/img/selfie-new.jpg" alt="" />
         </div>
         <div class="watercolour"></div>
         <div class="watercolour-2"></div>
