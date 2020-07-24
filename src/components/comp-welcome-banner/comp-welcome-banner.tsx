@@ -53,6 +53,7 @@ export class CompWelcomeBanner {
           </picture>
         </div>
         <div class="watercolour"></div>
+        <div class="watercolour-2"></div>
       </section>
     );
   }
