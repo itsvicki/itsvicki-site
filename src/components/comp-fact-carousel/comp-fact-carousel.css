@@ -1,22 +1,27 @@
 @import "../../global/variables.css";
 
 :host {
-  --border-color: var(--secondary-grey);
+  --button-colour: var(--primary-black);
+  --active-button-background: transparent;
+  --active-button-colour: var(--primary-orange);
 
   --heading-background-colour: var(--secondary-pink);
   --heading-font-size: var(--default-font-size);
   --heading-font-weight: normal;
-  --heading-colour: var(--p-colour);
+  --heading-colour: var(--primary-black);
   --heading-padding: 1.5em 2em;
   --heading-text-transform: uppercase;
 }
 
 @media (prefers-color-scheme: dark) {
   :host {
+    --button-colour: var(--primary-white);
+    --active-button-colour: var(--primary-orange);
+
     --heading-background-colour: transparent;
     --heading-font-size: 1.1em;
     --heading-font-weight: bold;
-    --heading-colour: var(--secondary-blue);
+    --heading-colour: var(--primary-orange);
     --heading-padding: 1em 1em;
     --heading-text-transform: uppercase;
   }
@@ -59,12 +64,6 @@
   font-size: var(--heading-font-size);
   font-weight: var(--heading-font-weight);
   color: var(--heading-colour);
-
-  /* padding: 1em 2em;
-  color: var(--h1-colour);
-  margin: 1.5em 1.5em 0 1.5em;
-  font-size: 18px;
-  line-height: 1em; */
 }
 
 @media only screen and (min-width: 700px) {
@@ -74,7 +73,7 @@
 }
 
 .container .next {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='rgb(220,198,187)' viewBox='0 0 512 512'%3E%3Cpath d='M158.53,473c-4.45,0-8.9-1.11-12.23-4.45a16.12,16.12,0,0,1,0-23.35L334.23,257.25,146.3,69.33A16.51,16.51,0,0,1,169.65,46l199,199a16.12,16.12,0,0,1,0,23.35l-199,200.15A14.28,14.28,0,0,1,158.53,473Z'%3E%3C/path%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' xmlns='http://www.w3.org/2000/svg' fill='%23fff' fill-rule='evenodd' clip-rule='evenodd'%3E%3Cpath d='M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-color: transparent;
   border: 0 none;
@@ -83,6 +82,12 @@
   width: 4em;
   padding: 2em;
   margin: 0;
+}
+
+@media (prefers-color-scheme: light) {
+  .container .next {
+    filter: brightness(0.3);
+  }
 }
 
 /*
@@ -127,11 +132,14 @@
 }
 
 .nav button {
-  background-color: #fff;
+  background-color: transparent;
   border: 0 none;
   font-weight: normal;
+  color: var(--button-colour);
 }
 
 .nav .active button {
-  background-color: var(--secondary-pink);
+  background-color: var(--active-button-background);
+  color: var(--active-button-colour);
+  font-weight: bold;
 }

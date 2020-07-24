@@ -31,7 +31,7 @@ export class CompTiles implements ComponentInterface {
         <div class="container">
           {qAndAData.questions.map((d) => (
             <div class="tile">
-              <div class={{background: d.background}}>
+              <span class={{background: d.background}}>
                 <a
                   class="question trigger front"
                   href=""
@@ -42,7 +42,7 @@ export class CompTiles implements ComponentInterface {
                 <div class="answer back tile-modal" aria-hidden="true">
                   {toHypertext(d.answerHypertext)}
                 </div>
-              </div>
+              </span>
             </div>
           ))}
         </div>

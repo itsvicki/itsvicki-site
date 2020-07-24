@@ -1,5 +1,6 @@
 :root {
   --primary-orange: #c17f38;
+  --primary-pink: #784a4a;
   --primary-black: #323a45;
   --primary-white: #ffffff;
   --secondary-white: #f7f7f7;
@@ -18,12 +19,13 @@
   --nav-active-link-colour: var(--primary-orange);
 
   --h1-colour: var(--primary-orange);
-  --h2-colour: var(--primary-orange);
+  --h2-colour: var(--primary-pink);
   --h3-colour: var(--primary-black);
   --p-colour: var(--primary-black);
   --p-contrast-colour: var(--primary-black);
 
   --primary-font-family: "Cormorant Garamond", Open Sans, sans-serif;
+  --secondary-font-family: "Didot", Open Sans, sans-serif;
   --default-font-size: 1em;
   --h1-font-size: 1.6em;
   --h2-font-size: 1.2em;
@@ -33,16 +35,12 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --primary-orange: #daaf81;
+    --primary-pink: #cdadad;
 
     --main-background: var(--primary-grey);
     --nav-link-colour: var(--primary-white);
+
     --p-colour: var(--primary-white);
-
-    /*--nav-active-link-colour: var(--secondary-blue);
-
-    --h1-colour: var(--secondary-blue);
-    --h2-colour: var(--secondary-blue);
-    --h3-colour: var(--primary-white); */
   }
 
   img,

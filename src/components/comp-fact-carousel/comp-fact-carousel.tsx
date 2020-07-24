@@ -87,7 +87,7 @@ export class CompFactCarousel implements ComponentInterface {
             {facts.map((q, index) => (
               <li
                 // {...(index === focusIndex ? {tabindex: "-1"} : "")}
-                // aria-hidden={`${index !== visibleIndex}`}
+                aria-hidden={`${index !== visibleIndex}`}
                 ref={(el) => this.slideRefs.set(index, el as HTMLElement)}
               >
                 {q.quote}

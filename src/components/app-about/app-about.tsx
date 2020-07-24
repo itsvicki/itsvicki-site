@@ -17,9 +17,9 @@ export class AppAbout {
         questionHypertext: [
           "p",
           null,
-          ["span", null, "Cuppa tea or coffee?"],
-          ["span", {class: "icon tea"}, ""],
-          ["span", {class: "icon coffee"}, ""],
+          ["span", null, "Coffee or cuppa tea?"],
+          // ["span", {class: "icon tea"}, ""],
+          // ["span", {class: "icon coffee"}, ""],
         ],
         answerHypertext: ["p", null, "I love you a whole latte."],
       },
@@ -28,8 +28,20 @@ export class AppAbout {
         background: true,
         questionHypertext: [
           "div",
+          null,
+          ["span", null, "Something one"],
+          ["span", {class: "em"}, "or"],
+          ["span", null, "something two?"],
+        ],
+        answerHypertext: ["div", null, "Something one!"],
+      },
+      {
+        id: 3,
+        background: false,
+        questionHypertext: [
+          "div",
           {
-            class: "shout",
+            class: "fancy",
           },
           ["span", null, "Action "],
           [
@@ -53,12 +65,44 @@ export class AppAbout {
         ],
       },
       {
-        id: 3,
+        id: 4,
+        background: false,
+        questionHypertext: [
+          "div",
+          {
+            class: "fancy",
+          },
+          ["span", null, "Something one"],
+          ["span", {class: "em"}, "or"],
+          ["span", null, "something two?"],
+        ],
+        answerHypertext: ["div", null, "Something one!"],
+      },
+      // {
+      //   id: 4,
+      //   background: false,
+      //   questionHypertext: [
+      //     "div",
+      //     {
+      //       class: "fancy",
+      //     },
+      //     ["span", null, "Chad kroeger"],
+      //     ["span", {class: "em"}, "or"],
+      //     ["span", null, "Jason Aldean?"],
+      //   ],
+      //   answerHypertext: [
+      //     "div",
+      //     null,
+      //     "Both, because my music taste is impeccable.",
+      //   ],
+      // },
+      {
+        id: 5,
         background: false,
         questionHypertext: [
           "span",
           null,
-          ["p", null, "Favourite holiday destination?"],
+          ["p", {class: "small-title"}, "Favourite holiday?"],
           [
             "ol",
             null,
@@ -80,8 +124,8 @@ export class AppAbout {
         ],
       },
       {
-        id: 4,
-        background: false,
+        id: 6,
+        background: true,
         questionHypertext: [
           "div",
           null,
@@ -90,34 +134,6 @@ export class AppAbout {
           ["span", null, "Anguar?"],
         ],
         answerHypertext: ["div", null, "React."],
-      },
-      {
-        id: 5,
-        background: false,
-        questionHypertext: [
-          "div",
-          null,
-          ["span", null, "Chad kroeger"],
-          ["span", {class: "em"}, "or"],
-          ["span", null, "Jason Aldean?"],
-        ],
-        answerHypertext: [
-          "div",
-          null,
-          "Both, because my music taste is impeccable.",
-        ],
-      },
-      {
-        id: 6,
-        background: true,
-        questionHypertext: [
-          "div",
-          null,
-          ["span", null, "Pepsi"],
-          ["span", {class: "em"}, "or"],
-          ["span", null, "Coca-Cola?"],
-        ],
-        answerHypertext: ["p", null, "Pepsi!"],
       },
     ],
     facts: [
