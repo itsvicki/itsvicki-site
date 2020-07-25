@@ -64,6 +64,10 @@
   grid-column: 2 / -2;
   grid-row: 10 / 16;
 
+  /* Help with watercolour image loading quicker than this
+     and causing it to jump when loaded */
+  min-height: 3em;
+
   z-index: 1;
 }
 
