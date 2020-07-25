@@ -29,11 +29,15 @@ export class AppAbout {
         questionHypertext: [
           "div",
           null,
-          ["span", null, "Something one"],
+          ["span", null, "Early bird"],
           ["span", {class: "em"}, "or"],
-          ["span", null, "something two?"],
+          ["span", null, "Night owl?"],
         ],
-        answerHypertext: ["div", null, "Something one!"],
+        answerHypertext: [
+          "div",
+          null,
+          "A few years ago it would be early bird all the way. I wouldn't even be able to lie in! But now, night owl.",
+        ],
       },
       {
         id: 3,
