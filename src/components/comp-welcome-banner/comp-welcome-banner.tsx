@@ -42,12 +42,37 @@ export class CompWelcomeBanner {
             </p>
           </div>
         </div>
+        {/* TODO: Add alt content & change this for a more landscape img? */}
         <div class="moi">
-          {/* TODO: Add alt content & change this for a more landscape img? */}
-          <img src="/assets/img/selfie-new.jpg" alt="" />
+          <picture>
+            <source
+              srcSet="/assets/img/selfie-new.webp"
+              type="image/webp"
+              media="(min-width: 600px)"
+            />
+            <img src="/assets/img/selfie-new.jpg" alt="" />
+          </picture>
         </div>
-        <div class="watercolour"></div>
-        <div class="watercolour-2"></div>
+        <div class="watercolour">
+          <picture>
+            <source
+              srcSet="/assets/icon/watercolour-3-min.webp"
+              type="image/webp"
+              media="(min-width: 600px)"
+            />
+            <img src="/assets/icon/watercolour-3-min.png" alt="" />
+          </picture>
+        </div>
+        <div class="watercolour-2">
+          <picture>
+            <source
+              srcSet="/assets/icon/watercolour-2-min.webp"
+              type="image/webp"
+              media="(min-width: 600px)"
+            />
+            <img src="/assets/icon/watercolour-2-min.png" alt="" />
+          </picture>
+        </div>
       </section>
     );
   }

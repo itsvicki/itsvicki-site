@@ -43,8 +43,7 @@
     --p-colour: var(--primary-white);
   }
 
-  img,
-  picture {
+  img {
     filter: brightness(0.8) contrast(1.1);
   }
 }

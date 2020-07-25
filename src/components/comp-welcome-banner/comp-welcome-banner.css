@@ -95,10 +95,10 @@
   /* Height required when using auto in CSS grids */
   height: 150px;
 
-  background-image: url("/assets/icon/watercolour-2-min.png");
+  /* background-image: url("/assets/icon/watercolour-2-min.png");
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: right; */
 
   z-index: 2;
   opacity: 0.7;
@@ -107,26 +107,26 @@
 @media only screen and (min-width: 600px) {
   .watercolour {
     grid-column: -10 / -1;
-    grid-row: 4 / 20;
+    grid-row: 4 / 22;
 
     height: auto;
     opacity: 1;
     z-index: 0;
 
-    background-image: url("/assets/icon/watercolour-3-min.png");
+    /* background-image: url("/assets/icon/watercolour-3-min.png");
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: right;
+    background-position: right; */
   }
 
   .watercolour-2 {
     grid-column: 2 / 6;
     grid-row: 21 / 24;
     height: 150px;
-    background-image: url(/assets/icon/watercolour-2-min.png);
+    /* background-image: url(/assets/icon/watercolour-2-min.png);
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: left;
+    background-position: left; */
     z-index: 2;
     opacity: 0.7;
     transform: rotate(180deg);
@@ -137,13 +137,6 @@
   .watercolour-2 {
     grid-column: 2 / 6;
     grid-row: 22 / -1;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .watercolour,
-  .watercolour-2 {
-    filter: brightness(0.8) contrast(1.1);
   }
 }
 
