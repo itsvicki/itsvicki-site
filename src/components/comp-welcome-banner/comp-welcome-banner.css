@@ -5,14 +5,26 @@
   grid-template-columns: repeat(28, 1fr);
   grid-template-rows: repeat(auto-fill, 50px);
 
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
 @media only screen and (min-width: 600px) {
   .banner {
     grid-template-columns: repeat(20, 1fr);
-    grid-template-rows: repeat(28, 30px);
+    grid-template-rows: repeat(26, 30px);
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .banner {
+    grid-template-rows: repeat(30, 30px);
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .banner {
+    grid-template-rows: repeat(27, 30px);
   }
 }
 
@@ -78,9 +90,9 @@
   }
 }
 
-@media only screen and (min-width: 730px) {
+@media only screen and (min-width: 900px) {
   .moi {
-    grid-column: 5 / 16;
+    grid-column: 7 / 16;
     grid-row: 14 / 25;
   }
 }
@@ -121,7 +133,7 @@
   .watercolour {
     display: block;
     grid-column: -10 / -1;
-    grid-row: 5 / 22;
+    grid-row: 6 / 22;
 
     /* height: auto; */
     opacity: 1;
@@ -131,18 +143,36 @@
   .watercolour-2 {
     display: block;
     grid-column: 2 / 6;
-    grid-row: 21 / 24;
+    grid-row: 22 / 24;
 
     height: 110px;
     z-index: 2;
     opacity: 0.7;
-    transform: rotate(180deg);
   }
 }
 
-@media only screen and (min-width: 730px) {
+@media only screen and (min-width: 700px) {
   .watercolour-2 {
     grid-column: 2 / 6;
+    grid-row: 23 / -1;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .watercolour {
+    grid-column: -8 / -1;
+    grid-row: 5 / 22;
+  }
+
+  .watercolour-2 {
+    grid-column: 3 / 6;
+    grid-row: -1 / -6;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .watercolour-2 {
+    grid-column: 6 / 9;
     grid-row: 23 / 24;
   }
 }

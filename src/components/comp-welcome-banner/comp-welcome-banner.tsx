@@ -68,6 +68,12 @@ export class CompWelcomeBanner {
             <source
               srcSet="/assets/icon/watercolour-2-min.webp"
               type="image/webp"
+              media="(max-width: 599px)"
+            />
+            <source
+              srcSet="/assets/icon/watercolour-2-rotated-min.webp"
+              type="image/webp"
+              media="(min-width: 600px)"
             />
             <img src="/assets/icon/watercolour-2-min.png" alt="" />
           </picture>
