@@ -5,6 +5,7 @@ import {
   Prop,
   State,
   Listen,
+  Build,
 } from "@stencil/core";
 
 import {FactInterface} from "../../global/definitions/definitions";
@@ -34,8 +35,10 @@ export class CompFactCarousel implements ComponentInterface {
     }
   }
 
-  constructor() {
-    if (this.facts) this.slidesLength = this.facts.length;
+  componentWillLoad() {
+    if (!Build.isBrowser) {
+      if (this.facts) this.slidesLength = this.facts.length;
+    }
   }
 
   disconnectedCallback() {
@@ -77,9 +80,9 @@ export class CompFactCarousel implements ComponentInterface {
   }
 
   render() {
-    // if (!Build.isBrowser || !this.facts) {
-    //   return;
-    // }
+    if (!Build.isBrowser || !this.facts) {
+      return;
+    }
 
     const {
       slideRefs,
