@@ -36,9 +36,9 @@ export class CompFactCarousel implements ComponentInterface {
   }
 
   componentWillLoad() {
-    if (!Build.isBrowser) {
-      if (this.facts) this.slidesLength = this.facts.length;
-    }
+    // if (!Build.isBrowser) {
+    if (this.facts) this.slidesLength = this.facts.length;
+    // }
   }
 
   disconnectedCallback() {
@@ -80,9 +80,9 @@ export class CompFactCarousel implements ComponentInterface {
   }
 
   render() {
-    if (!Build.isBrowser || !this.facts) {
-      return;
-    }
+    // if (!Build.isBrowser || !this.facts) {
+    //   return;
+    // }
 
     const {
       slideRefs,
