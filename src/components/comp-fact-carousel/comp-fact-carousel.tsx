@@ -34,7 +34,7 @@ export class CompFactCarousel implements ComponentInterface {
     }
   }
 
-  componentWillLoad() {
+  componentDidLoad() {
     // if (!Build.isBrowser) {
     if (this.facts) this.slidesLength = this.facts.length;
     // }
