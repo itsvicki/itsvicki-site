@@ -1,4 +1,11 @@
-import {Component, ComponentInterface, h, Prop, State} from "@stencil/core";
+import {
+  Component,
+  ComponentInterface,
+  h,
+  Prop,
+  State,
+  Listen,
+} from "@stencil/core";
 
 import {FactInterface} from "../../global/definitions/definitions";
 
@@ -20,6 +27,13 @@ export class CompFactCarousel implements ComponentInterface {
   @Prop() compTitle: string;
   @Prop() announceItem: boolean;
 
+  @Listen("keydown")
+  handleKeyDown(ev: KeyboardEvent) {
+    if (ev.key === "Enter" || ev.key === " " || ev.key === "ArrowRight") {
+      this.updateTabIndex();
+    }
+  }
+
   constructor() {
     this.slidesLength = this.facts.length;
   }
@@ -35,17 +49,17 @@ export class CompFactCarousel implements ComponentInterface {
   }
 
   updateTabIndex() {
-    // Remove tabindex from currently visible slide
-    if (this.prevVisibleIndex !== null) {
-      const currentSlide = this.slideRefs.get(this.prevVisibleIndex);
-      currentSlide.removeAttribute("tabindex", "");
-    }
-
-    // Add tabindex to the new
-    const newSlide = this.slideRefs.get(this.visibleIndex);
-    this.announceSlideChange();
-
     this.timeoutID = window.setTimeout(() => {
+      // Remove tabindex from currently visible slide
+      if (this.prevVisibleIndex !== null) {
+        const currentSlide = this.slideRefs.get(this.prevVisibleIndex);
+        currentSlide.removeAttribute("tabindex", "");
+      }
+
+      // Add tabindex to the new
+      const newSlide = this.slideRefs.get(this.visibleIndex);
+      this.announceSlideChange();
+
       newSlide.setAttribute("tabindex", "-1");
       newSlide.focus();
     }, 500);
@@ -60,14 +74,11 @@ export class CompFactCarousel implements ComponentInterface {
     }
 
     this.visibleIndex = index;
-
-    this.updateTabIndex();
   }
-
-  //TODO: Add keystroke control
 
   render() {
     const {
+      slideRefs,
       facts,
       compTitle,
       visibleIndex,
@@ -86,9 +97,8 @@ export class CompFactCarousel implements ComponentInterface {
           <ul class="slides">
             {facts.map((q, index) => (
               <li
-                // {...(index === focusIndex ? {tabindex: "-1"} : "")}
                 aria-hidden={`${index !== visibleIndex}`}
-                ref={(el) => this.slideRefs.set(index, el as HTMLElement)}
+                ref={(el) => slideRefs.set(index, el as HTMLElement)}
               >
                 {q.quote}
               </li>
