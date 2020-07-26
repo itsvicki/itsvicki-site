@@ -1,4 +1,4 @@
-import {Component, h} from "@stencil/core";
+import {Component, h, Build} from "@stencil/core";
 
 import {QAndAInterface} from "../../global/definitions/definitions";
 
@@ -8,33 +8,26 @@ import {QAndAInterface} from "../../global/definitions/definitions";
   shadow: true,
 })
 export class AppAbout {
-  // TODO: Fix the quote HTML
   private qAndAData: QAndAInterface = {
     questions: [
       {
         id: 1,
         background: false,
-        questionHypertext: [
-          "p",
-          null,
-          ["span", null, "Coffee or cuppa tea?"],
-          // ["span", {class: "icon tea"}, ""],
-          // ["span", {class: "icon coffee"}, ""],
-        ],
+        questionHypertext: ["p", null, ["span", null, "Coffee or cuppa tea?"]],
         answerHypertext: ["p", null, "I love you a whole latte."],
       },
       {
         id: 2,
         background: true,
         questionHypertext: [
-          "div",
+          "p",
           null,
           ["span", null, "Early bird"],
           ["span", {class: "em"}, "or"],
           ["span", null, "Night owl?"],
         ],
         answerHypertext: [
-          "div",
+          "p",
           null,
           "A few years ago it would be early bird all the way. I wouldn't even be able to lie in! But now, night owl.",
         ],
@@ -43,7 +36,7 @@ export class AppAbout {
         id: 3,
         background: false,
         questionHypertext: [
-          "div",
+          "p",
           {
             class: "fancy",
           },
@@ -72,7 +65,7 @@ export class AppAbout {
         id: 4,
         background: false,
         questionHypertext: [
-          "div",
+          "p",
           {
             class: "fancy",
           },
@@ -81,7 +74,7 @@ export class AppAbout {
           ["span", null, "Dark mode?"],
         ],
         answerHypertext: [
-          "div",
+          "p",
           null,
           "Anyone who knows me will laugh at this - I had light mode everything and it would burn people's eyes but i've come to the dark side now. Woo.",
         ],
@@ -90,7 +83,7 @@ export class AppAbout {
         id: 5,
         background: false,
         questionHypertext: [
-          "span",
+          "div",
           null,
           ["p", {class: "small-title"}, "Favourite holiday?"],
           [
@@ -117,13 +110,13 @@ export class AppAbout {
         id: 6,
         background: true,
         questionHypertext: [
-          "div",
+          "p",
           null,
           ["span", null, "React"],
           ["span", {class: "em"}, "or"],
           ["span", null, "Anguar?"],
         ],
-        answerHypertext: ["div", null, "React."],
+        answerHypertext: ["p", null, "React."],
       },
     ],
     facts: [
@@ -146,6 +139,10 @@ export class AppAbout {
   };
 
   render() {
+    if (!Build.isBrowser || !this.qAndAData) {
+      return;
+    }
+
     const qAndAData = this.qAndAData;
 
     return (
