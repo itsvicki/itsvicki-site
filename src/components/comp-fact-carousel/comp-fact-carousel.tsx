@@ -5,7 +5,6 @@ import {
   Prop,
   State,
   Listen,
-  Build,
 } from "@stencil/core";
 
 import {FactInterface} from "../../global/definitions/definitions";
