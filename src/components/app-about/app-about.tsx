@@ -76,30 +76,16 @@ export class AppAbout {
           {
             class: "fancy",
           },
-          ["span", null, "Something one"],
+          ["span", null, "Light"],
           ["span", {class: "em"}, "or"],
-          ["span", null, "something two?"],
+          ["span", null, "Dark mode?"],
         ],
-        answerHypertext: ["div", null, "Something one!"],
+        answerHypertext: [
+          "div",
+          null,
+          "Anyone who knows me will laugh at this - I had light mode everything and it would burn people's eyes but i've come to the dark side now. Woo.",
+        ],
       },
-      // {
-      //   id: 4,
-      //   background: false,
-      //   questionHypertext: [
-      //     "div",
-      //     {
-      //       class: "fancy",
-      //     },
-      //     ["span", null, "Chad kroeger"],
-      //     ["span", {class: "em"}, "or"],
-      //     ["span", null, "Jason Aldean?"],
-      //   ],
-      //   answerHypertext: [
-      //     "div",
-      //     null,
-      //     "Both, because my music taste is impeccable.",
-      //   ],
-      // },
       {
         id: 5,
         background: false,
@@ -144,12 +130,17 @@ export class AppAbout {
       {
         id: 1,
         quote:
-          "I'm a big multitasker - more often then not it's when i do both by fastest and best work. So much so that in school I would always have to be doodling in class, without, I wouldn't retrain half as much.",
+          "I'm a big multitasker - so much so that in school I would always have to be doodling in class, without, I wouldn't retrain half as much.",
       },
       {
         id: 2,
         quote:
-          "I would say I'm a pretty fast typer - my average speed on typeracer.com is about 100wpm but no hall of fame position yet!",
+          "Some  would say I'm a pretty fast typist - my average speed on typeracer.com is about 100wpm but no hall of fame position yet!",
+      },
+      {
+        id: 3,
+        quote:
+          "Admittedly a stickler for things being in position. Good characteristic to have when it comes to pixel perfect design but not so great to share a desk next to. Google, 'Dwight the office pencil ruler' as a bit of an insight! Ha.",
       },
     ],
   };
