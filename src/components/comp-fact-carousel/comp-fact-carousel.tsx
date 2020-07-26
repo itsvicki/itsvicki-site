@@ -78,9 +78,9 @@ export class CompFactCarousel implements ComponentInterface {
   }
 
   render() {
-    if (!Build.isBrowser || !this.facts) {
-      return;
-    }
+    // if (!Build.isBrowser || !this.facts) {
+    //   return;
+    // }
 
     const {
       slideRefs,
