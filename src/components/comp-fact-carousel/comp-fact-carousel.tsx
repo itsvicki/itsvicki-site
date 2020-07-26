@@ -23,7 +23,7 @@ export class CompFactCarousel implements ComponentInterface {
   @State() visibleIndex: number = 0;
   @State() announcementText: string = "";
 
-  @Prop({reflect: true}) facts!: FactInterface[];
+  @Prop({reflect: true}) facts: FactInterface[] = [];
   @Prop() compTitle: string;
   @Prop() announceItem: boolean;
 
@@ -35,9 +35,7 @@ export class CompFactCarousel implements ComponentInterface {
   }
 
   componentDidLoad() {
-    // if (!Build.isBrowser) {
     if (this.facts) this.slidesLength = this.facts.length;
-    // }
   }
 
   disconnectedCallback() {
@@ -79,10 +77,6 @@ export class CompFactCarousel implements ComponentInterface {
   }
 
   render() {
-    // if (!Build.isBrowser || !this.facts) {
-    //   return;
-    // }
-
     const {
       slideRefs,
       facts,

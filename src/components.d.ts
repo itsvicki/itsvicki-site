@@ -103,7 +103,7 @@ declare namespace LocalJSX {
     interface CompFactCarousel {
         "announceItem"?: boolean;
         "compTitle"?: string;
-        "facts": FactInterface[];
+        "facts"?: FactInterface[];
     }
     interface CompGlobalHeader {
     }
