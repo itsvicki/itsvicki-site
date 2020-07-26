@@ -1,4 +1,4 @@
-import {Component, h, Build} from "@stencil/core";
+import {Component, h} from "@stencil/core";
 
 import {QAndAInterface} from "../../global/definitions/definitions";
 
@@ -139,10 +139,6 @@ export class AppAbout {
   };
 
   render() {
-    if (!Build.isBrowser || !this.qAndAData) {
-      return;
-    }
-
     const qAndAData = this.qAndAData;
 
     return (
