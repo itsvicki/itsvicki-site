@@ -5,7 +5,7 @@
   For example, "font-family" within the "body" selector is a CSS property
   most apps will want applied to all components.
 
-  Any global CSS variables should also be applied here. 
+  Any global CSS variables should also be applied here.
 */
 
 @font-face {

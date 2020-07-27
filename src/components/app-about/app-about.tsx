@@ -1,6 +1,9 @@
 import {Component, h} from "@stencil/core";
 
 import {QAndAInterface} from "../../global/definitions/definitions";
+
+import {linkedInUrl} from "../../global/site-structure-utils";
+
 @Component({
   tag: "app-about",
   styleUrl: "app-about.css",
@@ -122,7 +125,7 @@ export class AppAbout {
       {
         id: 1,
         quote:
-          "I'm a big multitasker - so much so that in school I would always have to be doodling in class, without, I wouldn't retrain half as much.",
+          "I'm a big multitasker - in school I would always be doodling in class. Promise it helps me focus!",
       },
       {
         id: 2,
@@ -132,7 +135,7 @@ export class AppAbout {
       {
         id: 3,
         quote:
-          "Admittedly a stickler for things being in position. Good characteristic to have when it comes to pixel perfect design but not so great to share a desk next to. Google, 'Dwight the office pencil ruler' as a bit of an insight! Ha.",
+          "Admittedly a stickler for things being in position. Good characteristic to have when it comes to pixel perfect design but not so great to share a desk next to. Google, 'Dwight the office pencil ruler' as a bit of an insight!",
       },
     ],
   };
@@ -147,9 +150,83 @@ export class AppAbout {
         <p>Let's start off with a bit of fun.</p>
         <h2>Take a guess...</h2>
 
+        {/* Tiles/carousel */}
         <div class="tiles">
           <comp-tiles qAndAData={qAndAData}></comp-tiles>
         </div>
+
+        {/* Bio */}
+        <div class="bio">
+          <h2>The early days</h2>
+          <p>
+            My interest in accessibility started way back when in my university
+            days - so much so that I decided to do my dissertation in Human
+            Computer Interaction (HCI) with a focus on disability.
+          </p>
+          <p>
+            From graduation I then went onto a great job which allowed me to
+            gain skills in all aspects of development;
+            <ul>
+              <li>Requirements gathering</li>
+              <li>System and UI design</li>
+              <li>Development and testing</li>
+              <li>Drinking the go live champagne</li>
+            </ul>
+          </p>
+          <br />
+          <h2>Now</h2>
+          <p>
+            Currently I travel between Stockholm, Sweden and UK working for{" "}
+            <a
+              href="https://www.leighton.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Leighton
+            </a>
+            , mainly on their British Airways account where all work is required
+            to meet WCAG 2.0 guidelines by law.
+          </p>
+          <p>
+            I have gained experience as both a software engineer as well as an
+            engineering manager - currently working as a senior software
+            engineer.
+          </p>
+
+          <h3>Experience / Technology</h3>
+          <p>
+            <ul>
+              <li>Angular 8</li>
+              <li>
+                Using a global experience language written with web components +
+                Stencil.js
+              </li>
+              <li>CSS/SASS</li>
+              <li>Javascript/Typescript</li>
+              <li>XSLT</li>
+              <li>System design</li>
+            </ul>
+          </p>
+
+          <h3>Project breakdown</h3>
+          <p>
+            The best place to see what projects i've worked on is on{" "}
+            <a href={linkedInUrl} target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>{" "}
+            &gt; Projects.
+          </p>
+
+          <h3>Additional experience / personal projects</h3>
+          <ul>
+            <li>Web Components + Stencil.js</li>
+            <li>React</li>
+            <li>CSS modules</li>
+            <li>Javascript/Typescript</li>
+          </ul>
+        </div>
+        <br />
+        <br />
       </host>
     );
   }
