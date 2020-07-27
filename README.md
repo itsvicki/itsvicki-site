@@ -4,7 +4,8 @@ I'm Vicki, a software engineer/manager passionate about accessibility whilst cre
 She/Her.
 
 🤓 [Professional rundown](https://www.linkedin.com/in/itsvicki/)\
-💭 [dev.to/itsvicki](https://dev.to/itsvicki)\
+💭 [dev.to/itsvicki](https://dev.to/itsvicki)
+
 🔭 I’m currently working on IAAP certification\
 📍 Living between Stockholm, Sweden and UK
 
