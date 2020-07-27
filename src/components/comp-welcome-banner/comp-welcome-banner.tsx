@@ -18,7 +18,7 @@ export class CompWelcomeBanner {
               <p class="emphasis">Hej hej!</p>
               <p>
                 I'm Vicki, a software engineer/manager passionate about
-                accessibility.
+                accessibility whilst creating interactive and creative sites
                 <br />
                 She/her.
               </p>
