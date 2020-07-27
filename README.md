@@ -1,11 +1,11 @@
 ### Hej hej
 
-I'm Vicki, a software engineer/manager passionate about accessibility whilst creating fun and creative sites. 
+I'm Vicki, a software engineer/manager passionate about accessibility whilst creating fun and creative sites.\
 She/Her.
 
-🤓 [Professional rundown](https://www.linkedin.com/in/itsvicki/)
-💭 [dev.to/itsvicki](https://dev.to/itsvicki)
-🔭 I’m currently working on IAAP certification 
+🤓 [Professional rundown](https://www.linkedin.com/in/itsvicki/)\
+💭 [dev.to/itsvicki](https://dev.to/itsvicki)\
+🔭 I’m currently working on IAAP certification\
 📍 Living between Stockholm, Sweden and UK
 
 <!--
