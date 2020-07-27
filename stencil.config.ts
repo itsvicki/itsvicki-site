@@ -9,7 +9,7 @@ export const config: Config = {
   outputTargets: [
     {
       type: "www",
-      copy: [{src: "assets/img"}, {src: ".netlify"}],
+      copy: [{src: "assets/img"}],
       // comment the following line to disable service workers in production
       serviceWorker: null,
       baseUrl: "https://itsvicki.dev/",
