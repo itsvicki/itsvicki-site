@@ -49,3 +49,9 @@ body {
   background-color: var(--main-background);
   color: var(--p-colour);
 }
+
+/* Some global styles conflict with cookie control, inherit allows it to loose some */
+#ccc * {
+  font-family: inherit;
+  text-transform: inherit;
+}

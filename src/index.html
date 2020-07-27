@@ -14,7 +14,9 @@
 
     <script type="module" src="/build/app.esm.js"></script>
     <script nomodule src="/build/app.js"></script>
+
     <link href="/build/app.css" rel="stylesheet" />
+    <link rel="dns-prefetch" href="https://civiccomputing.com" />
 
     <link rel="apple-touch-icon" href="/assets/icon/icon.png" />
     <link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico" />
@@ -26,6 +28,55 @@
     />
   </head>
   <body>
-    <app-root></app-root>
+    <div id="app">
+      <app-root></app-root>
+    </div>
+
+    <script src="https://cc.cdn.civiccomputing.com/9/cookieControl-9.x.min.js"></script>
+    <script>
+      var config = {
+        apiKey: "4f848900bf3c9b5fd906d7109bf3f03c32089bd4",
+        product: "COMMUNITY",
+        optionalCookies: [
+          {
+            name: "analytics",
+            label: "Analytics Cookies",
+            description:
+              "Analytical cookies help us to improve our website by collecting and reporting information on its usage.",
+            cookies: [],
+            onAccept: function () {
+              (function (i, s, o, g, r, a, m) {
+                i["GoogleAnalyticsObject"] = r;
+                (i[r] =
+                  i[r] ||
+                  function () {
+                    (i[r].q = i[r].q || []).push(arguments);
+                  }),
+                  (i[r].l = 1 * new Date());
+                (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m);
+              })(
+                window,
+                document,
+                "script",
+                "https://www.google-analytics.com/analytics.js",
+                "ga"
+              );
+
+              ga("create", "UA-173616198-1", "auto");
+              ga("send", "pageview");
+            },
+            onRevoke: function () {},
+          },
+        ],
+
+        position: "LEFT",
+        theme: "DARK",
+      };
+
+      CookieControl.load(config);
+    </script>
   </body>
 </html>
