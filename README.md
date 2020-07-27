@@ -1,4 +1,9 @@
-### Hi there 👋
+### Hej hej
+
+I'm Vicki, a software engineer/manager passionate about accessibility whilst creating fun and creative sites. 
+She/Her.
+
+- 📍 Currently living between Stockholm, Sweden and UK
 
 <!--
 **itsvicki/itsvicki** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
