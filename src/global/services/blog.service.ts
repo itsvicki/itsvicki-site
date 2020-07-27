@@ -13,7 +13,7 @@ export default class BlogServiceController {
 
     if (!cacheCheck) {
       try {
-        const file = await fetch("../../../.netlify/functions");
+        const file = await fetch("/.netlify/functions");
 
         if (file.ok !== true) {
           return Promise.reject({
