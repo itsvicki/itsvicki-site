@@ -128,7 +128,10 @@ button {
   overflow: hidden;
 }
 
-/* #app specifically mentioned so the divider lines in the cookie control popup is not hidden */
-#app [aria-hidden="true"] {
+/* 
+  :host specifically mentioned so the divider lines in the cookie control popup is not hidden 
+  a.k.a only applies to components 
+*/
+:host [aria-hidden="true"] {
   display: none !important;
 }
