@@ -90,13 +90,13 @@ export class CompTiles implements ComponentInterface {
           ))}
         </div>
 
-        {qAndAData.facts && (
+        {/* {qAndAData.facts && (
           <comp-fact-carousel
             compTitle="Facts"
             facts={qAndAData.facts}
             announceItem={true}
           ></comp-fact-carousel>
-        )}
+        )} */}
       </host>
     );
   }
