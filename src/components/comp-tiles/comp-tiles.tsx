@@ -52,7 +52,7 @@ export class CompTiles implements ComponentInterface {
     }, 500);
   }
 
-  private toggleTile = (el, index) => {
+  toggleTile = (el, index) => {
     el.preventDefault();
 
     this.prevVisibleIndex = this.visibleIndex;
@@ -60,6 +60,10 @@ export class CompTiles implements ComponentInterface {
   };
 
   render() {
+    if (!this.qAndAData) {
+      return;
+    }
+
     const {qAndAData, visibleIndex, slideRefs} = this;
 
     return (
@@ -90,13 +94,13 @@ export class CompTiles implements ComponentInterface {
           ))}
         </div>
 
-        {/* {qAndAData.facts && (
+        {qAndAData.facts && (
           <comp-fact-carousel
             compTitle="Facts"
             facts={qAndAData.facts}
             announceItem={true}
           ></comp-fact-carousel>
-        )} */}
+        )}
       </host>
     );
   }

@@ -86,7 +86,6 @@
 ol {
   list-style: none;
   counter-reset: li;
-  /* padding-inline-start: 40px; */
 }
 
 ol li {
