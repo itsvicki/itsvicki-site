@@ -14,3 +14,14 @@ export interface FactInterface {
   id: number;
   quote: string;
 }
+
+export interface BlogInterface {
+  id: number;
+  title: string;
+  slug: string;
+}
+
+export interface ErrorInterface {
+  code: "FILE_ERROR" | "GENERAL_ERROR" | "NO_MATCH";
+  errorMessage: string;
+}

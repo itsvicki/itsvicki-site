@@ -10,6 +10,11 @@ import { FactInterface, QAndAInterface, } from "./global/definitions/definitions
 export namespace Components {
     interface AppAbout {
     }
+    interface AppArticle {
+        "match": MatchResults;
+    }
+    interface AppArticles {
+    }
     interface AppHome {
     }
     interface AppProfile {
@@ -36,6 +41,18 @@ declare global {
     var HTMLAppAboutElement: {
         prototype: HTMLAppAboutElement;
         new (): HTMLAppAboutElement;
+    };
+    interface HTMLAppArticleElement extends Components.AppArticle, HTMLStencilElement {
+    }
+    var HTMLAppArticleElement: {
+        prototype: HTMLAppArticleElement;
+        new (): HTMLAppArticleElement;
+    };
+    interface HTMLAppArticlesElement extends Components.AppArticles, HTMLStencilElement {
+    }
+    var HTMLAppArticlesElement: {
+        prototype: HTMLAppArticlesElement;
+        new (): HTMLAppArticlesElement;
     };
     interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
     }
@@ -81,6 +98,8 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "app-about": HTMLAppAboutElement;
+        "app-article": HTMLAppArticleElement;
+        "app-articles": HTMLAppArticlesElement;
         "app-home": HTMLAppHomeElement;
         "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
@@ -92,6 +111,11 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AppAbout {
+    }
+    interface AppArticle {
+        "match"?: MatchResults;
+    }
+    interface AppArticles {
     }
     interface AppHome {
     }
@@ -114,6 +138,8 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "app-about": AppAbout;
+        "app-article": AppArticle;
+        "app-articles": AppArticles;
         "app-home": AppHome;
         "app-profile": AppProfile;
         "app-root": AppRoot;
@@ -128,6 +154,8 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "app-about": LocalJSX.AppAbout & JSXBase.HTMLAttributes<HTMLAppAboutElement>;
+            "app-article": LocalJSX.AppArticle & JSXBase.HTMLAttributes<HTMLAppArticleElement>;
+            "app-articles": LocalJSX.AppArticles & JSXBase.HTMLAttributes<HTMLAppArticlesElement>;
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
             "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
