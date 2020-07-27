@@ -2,4 +2,4 @@
 # unless otherwise overridden by more specific contexts.
 [build]
   # Directory with the serverless Lambda functions to deploy to AWS.
-  functions = "src/.netlify/functions/"
+  functions = "src/.netlify/functions/dev-to"
