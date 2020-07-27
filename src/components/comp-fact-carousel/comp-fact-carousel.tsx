@@ -77,6 +77,10 @@ export class CompFactCarousel implements ComponentInterface {
   }
 
   render() {
+    if (!this.facts) {
+      return;
+    }
+
     const {
       slideRefs,
       facts,
