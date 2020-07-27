@@ -1,7 +1,6 @@
 import {Component, h} from "@stencil/core";
 
 import {QAndAInterface} from "../../global/definitions/definitions";
-
 @Component({
   tag: "app-about",
   styleUrl: "app-about.css",
