@@ -1,7 +1,7 @@
 import {Component, h, Prop} from "@stencil/core";
+import {RouterHistory} from "@stencil/router";
 
 import {registerViewWithTracking} from "../../global/services/helper.utils";
-import {RouterHistory} from "@stencil/router";
 
 @Component({
   tag: "app-home",
