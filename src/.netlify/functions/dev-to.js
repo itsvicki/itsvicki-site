@@ -1,27 +1,20 @@
-const http = require("http");
+const https = require("https");
+let url = "https://dev.to/api/articles/me";
 
-exports.handler = async (event, context) => {
+exports.handler = async function (event) {
+  const options = {
+    headers: {
+      api_key: `${process.env.DEV_TO_API_KEY}`,
+    },
+  };
+
   return new Promise((resolve, reject) => {
-    const options = {
-      host: "dev.to",
-      path: "/api/articles/me",
-      port: 8000,
-      method: "GET",
-      headers: {
-        api_key: `${process.env.DEV_TO_API_KEY}`,
-      },
-    };
-
-    const req = http.request(options, (res) => {
-      resolve("Success");
-    });
-
-    req.on("error", (e) => {
-      reject(e.message);
-    });
-
-    // Send the request
-    req.write("");
-    req.end();
+    https
+      .get(url, options, (res) => {
+        resolve(res.statusCode);
+      })
+      .on("error", (e) => {
+        reject(Error(e));
+      });
   });
 };
