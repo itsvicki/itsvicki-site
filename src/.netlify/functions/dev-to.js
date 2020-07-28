@@ -20,7 +20,7 @@ exports.handler = async function (event) {
 
         // The whole response has been received. Print out the result.
         res.on("end", () => {
-          resolve(JSON.stringify(data));
+          resolve(JSON.parse(data.toString()));
           // console.log(JSON.parse(data).explanation);
         });
       })
