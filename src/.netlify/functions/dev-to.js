@@ -1,26 +1,27 @@
-const fetch = require("node-fetch");
+const http = require("http");
 
-exports.handler = async (event, context, callback) => {
-  const pass = (body) => {
-    callback(null, {statusCode: 200, body: JSON.stringify(body)});
-  };
-
-  try {
-    let response = await fetch("https://dev.to/api/articles/me", {
-      method: event.httpMethod,
+exports.handler = async (event, context) => {
+  return new Promise((resolve, reject) => {
+    const options = {
+      host: "dev.to",
+      path: "/api/articles/me",
+      port: 8000,
+      method: "GET",
       headers: {
-        api_key: `Bearer ${process.env.DEV_TO_API_KEY}`,
-        "Content-Type": "application/json",
+        api_key: `${process.env.DEV_TO_API_KEY}`,
       },
-      body: event.body,
-    });
-    let data = await response.json();
-    await pass(data);
-  } catch (err) {
-    let error = {
-      statusCode: err.statusCode || 500,
-      body: JSON.stringify({error: err.message}),
     };
-    await pass(error);
-  }
+
+    const req = http.request(options, (res) => {
+      resolve("Success");
+    });
+
+    req.on("error", (e) => {
+      reject(e.message);
+    });
+
+    // Send the request
+    req.write("");
+    req.end();
+  });
 };
