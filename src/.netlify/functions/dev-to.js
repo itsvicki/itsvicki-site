@@ -13,14 +13,14 @@ exports.handler = async function (event) {
       .get(url, options, (res) => {
         let data = "";
 
-        // A chunk of data has been received.
+        // A chunk of data has been recieved.
         res.on("data", (chunk) => {
           data += chunk;
         });
 
         // The whole response has been received. Print out the result.
         res.on("end", () => {
-          resolve(JSON.parse(data.toString()));
+          resolve(JSON.stringify(res.body));
           // console.log(JSON.parse(data).explanation);
         });
       })
