@@ -31,6 +31,8 @@ export namespace Components {
         "compTitle": string;
         "facts": FactInterface[];
     }
+    interface CompGlobalFooter {
+    }
     interface CompGlobalHeader {
     }
     interface CompTiles {
@@ -82,6 +84,12 @@ declare global {
         prototype: HTMLCompFactCarouselElement;
         new (): HTMLCompFactCarouselElement;
     };
+    interface HTMLCompGlobalFooterElement extends Components.CompGlobalFooter, HTMLStencilElement {
+    }
+    var HTMLCompGlobalFooterElement: {
+        prototype: HTMLCompGlobalFooterElement;
+        new (): HTMLCompGlobalFooterElement;
+    };
     interface HTMLCompGlobalHeaderElement extends Components.CompGlobalHeader, HTMLStencilElement {
     }
     var HTMLCompGlobalHeaderElement: {
@@ -108,6 +116,7 @@ declare global {
         "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
         "comp-fact-carousel": HTMLCompFactCarouselElement;
+        "comp-global-footer": HTMLCompGlobalFooterElement;
         "comp-global-header": HTMLCompGlobalHeaderElement;
         "comp-tiles": HTMLCompTilesElement;
         "comp-welcome-banner": HTMLCompWelcomeBannerElement;
@@ -137,6 +146,8 @@ declare namespace LocalJSX {
         "compTitle"?: string;
         "facts"?: FactInterface[];
     }
+    interface CompGlobalFooter {
+    }
     interface CompGlobalHeader {
     }
     interface CompTiles {
@@ -152,6 +163,7 @@ declare namespace LocalJSX {
         "app-profile": AppProfile;
         "app-root": AppRoot;
         "comp-fact-carousel": CompFactCarousel;
+        "comp-global-footer": CompGlobalFooter;
         "comp-global-header": CompGlobalHeader;
         "comp-tiles": CompTiles;
         "comp-welcome-banner": CompWelcomeBanner;
@@ -168,6 +180,7 @@ declare module "@stencil/core" {
             "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "comp-fact-carousel": LocalJSX.CompFactCarousel & JSXBase.HTMLAttributes<HTMLCompFactCarouselElement>;
+            "comp-global-footer": LocalJSX.CompGlobalFooter & JSXBase.HTMLAttributes<HTMLCompGlobalFooterElement>;
             "comp-global-header": LocalJSX.CompGlobalHeader & JSXBase.HTMLAttributes<HTMLCompGlobalHeaderElement>;
             "comp-tiles": LocalJSX.CompTiles & JSXBase.HTMLAttributes<HTMLCompTilesElement>;
             "comp-welcome-banner": LocalJSX.CompWelcomeBanner & JSXBase.HTMLAttributes<HTMLCompWelcomeBannerElement>;
