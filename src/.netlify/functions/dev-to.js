@@ -11,7 +11,18 @@ exports.handler = async function (event) {
   return new Promise((resolve, reject) => {
     https
       .get(url, options, (res) => {
-        resolve(JSON.stringify(res.data));
+        let data = "";
+
+        // A chunk of data has been received.
+        res.on("data", (chunk) => {
+          data += chunk;
+        });
+
+        // The whole response has been received. Print out the result.
+        res.on("end", () => {
+          resolve(JSON.stringify(data));
+          // console.log(JSON.parse(data).explanation);
+        });
       })
       .on("error", (e) => {
         reject(Error(e));
