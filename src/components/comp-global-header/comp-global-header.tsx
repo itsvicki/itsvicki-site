@@ -28,10 +28,10 @@ export class CompGlobalHeader implements ComponentInterface {
         <header>
           <nav class="space-text" role="navigation">
             <stencil-route-link url="/" activeClass="active" exact={true}>
-              01. Home
+              <span aria-hidden="true">01. </span>Home
             </stencil-route-link>
             <stencil-route-link url="/about" activeClass="active" exact={true}>
-              02. About
+              <span aria-hidden="true">02. </span>About
             </stencil-route-link>
 
             <stencil-route-link
@@ -39,10 +39,10 @@ export class CompGlobalHeader implements ComponentInterface {
               activeClass="active"
               exact={true}
             >
-              03. Thoughts
+              <span aria-hidden="true">03. </span>Thoughts
             </stencil-route-link>
             <a href={linkedInUrl} target="_blank" rel="noopener noreferrer">
-              04. Projects
+              <span aria-hidden="true">04. </span>Projects
             </a>
           </nav>
         </header>

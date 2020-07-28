@@ -124,7 +124,9 @@ ol li::before {
 }
 
 .question p:first-child,
-.question p:last-child {
+.question p:last-child,
+.answer p:first-child,
+.answer p:last-child {
   margin: 0 auto;
 }
 
@@ -298,4 +300,8 @@ ol li::before {
   .tile:nth-child(6) {
     border-left: 1px solid var(--border-colour);
   }
+}
+
+.tile [aria-hidden="true"] {
+  display: none !important;
 }

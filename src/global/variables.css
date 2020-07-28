@@ -145,11 +145,3 @@ button {
   height: 1px;
   overflow: hidden;
 }
-
-/* 
-  :host specifically mentioned so the divider lines in the cookie control popup is not hidden 
-  a.k.a only applies to components 
-*/
-:host [aria-hidden="true"] {
-  display: none !important;
-}
