@@ -9,7 +9,7 @@ import {
 
 import {QAndAInterface} from "../../global/definitions/definitions";
 
-import {toHypertext} from "../../global/services/helper.utils";
+import {toHypertext} from "../../global/services/content-transformation.service";
 
 @Component({
   tag: "comp-tiles",

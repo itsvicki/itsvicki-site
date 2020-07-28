@@ -3,6 +3,9 @@ import {MatchResults} from "@stencil/router";
 
 import {BlogService} from "../../global/services/blog.service";
 
+import //   // registerViewWithTracking,
+"../../global/services/helper.utils";
+
 import {
   BlogInterface,
   ErrorInterface,
@@ -25,7 +28,6 @@ export class AppArticle {
     try {
       const article = await BlogService.getArticle(this.match.params.slug);
       this.article = article;
-      console.log(article);
 
       // Update browser title & description
       document.title = `${article.title} - itsvicki.dev`;
@@ -38,7 +40,6 @@ export class AppArticle {
       // }
 
       this.error = err;
-      console.log(this.error);
     }
   }
 
@@ -54,6 +55,8 @@ export class AppArticle {
           <article>
             <header>
               <h1>{article.title}</h1>
+
+              <div innerHTML={article.html}></div>
             </header>
           </article>
         )}

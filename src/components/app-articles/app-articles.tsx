@@ -58,7 +58,9 @@ export class AppArticles {
             {articles.map((article) => (
               <article>
                 <h2>
-                  <a href={`/thoughts/${article.slug}`}>{article.title}</a>
+                  <stencil-route-link url={`/thoughts/${article.slug}`}>
+                    {article.title}
+                  </stencil-route-link>
                 </h2>
               </article>
             ))}

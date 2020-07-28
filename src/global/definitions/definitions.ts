@@ -19,6 +19,8 @@ export interface BlogInterface {
   id: number;
   title: string;
   slug: string;
+  body_markdown: any;
+  html: any;
 }
 
 export interface ErrorInterface {

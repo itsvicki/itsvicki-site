@@ -1,5 +1,7 @@
 import {BlogInterface} from "../definitions/definitions";
 
+import {markdownToHtml} from "./content-transformation.service";
+
 export default class BlogServiceController {
   public localCache = new Map<string, Promise<BlogInterface[]>>();
 
@@ -13,9 +15,11 @@ export default class BlogServiceController {
 
     if (!cacheCheck) {
       try {
-        const file = await fetch("/.netlify/functions/dev-to");
+        const file = await fetch("/api/dev-to");
+        const fileToJson = await file.json();
+        const data = fileToJson.data;
 
-        if (file.ok !== true) {
+        if (data.error) {
           return Promise.reject({
             code: "FILE_ERROR",
             errorMessage:
@@ -23,10 +27,9 @@ export default class BlogServiceController {
           });
         }
 
-        const fileToJson = await file.json();
-        this.localCache.set("articles", fileToJson);
+        this.localCache.set("articles", data);
 
-        return fileToJson;
+        return data;
       } catch (errors) {
         return Promise.reject({
           code: "GENERAL_ERROR",
@@ -50,7 +53,7 @@ export default class BlogServiceController {
   }
 
   /**
-   * Search the catalogue for a article based on a key match
+   * Search the catalogue for an article based on a key match
    *
    * @param article
    * @param key   What key to match on. By default `slug` is used
@@ -65,6 +68,8 @@ export default class BlogServiceController {
     );
 
     if (result) {
+      // Convert markdown to HTML
+      result.html = markdownToHtml(result.body_markdown);
       return result;
     }
 
