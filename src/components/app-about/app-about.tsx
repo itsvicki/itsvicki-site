@@ -1,6 +1,9 @@
-import {Component, h} from "@stencil/core";
+import {Component, h, Prop} from "@stencil/core";
+import {RouterHistory} from "@stencil/router";
 
 import {QAndAInterface} from "../../global/definitions/definitions";
+
+import {registerViewWithTracking} from "../../global/services/helper.utils";
 
 import {linkedInUrl} from "../../global/site-structure-utils";
 
@@ -10,6 +13,8 @@ import {linkedInUrl} from "../../global/site-structure-utils";
   shadow: true,
 })
 export class AppAbout {
+  @Prop() history: RouterHistory;
+
   private qAndAData: QAndAInterface = {
     questions: [
       {
@@ -139,6 +144,14 @@ export class AppAbout {
       },
     ],
   };
+
+  constructor() {
+    document.title = `About - itsvicki.dev`;
+  }
+
+  componentDidLoad() {
+    registerViewWithTracking(this.history.location.pathname);
+  }
 
   render() {
     const qAndAData = this.qAndAData;

@@ -5,17 +5,21 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { MatchResults, } from "@stencil/router";
+import { MatchResults, RouterHistory, } from "@stencil/router";
 import { FactInterface, QAndAInterface, } from "./global/definitions/definitions";
 export namespace Components {
     interface AppAbout {
+        "history": RouterHistory;
     }
     interface AppArticle {
+        "history": RouterHistory;
         "match": MatchResults;
     }
     interface AppArticles {
+        "history": RouterHistory;
     }
     interface AppHome {
+        "history": RouterHistory;
     }
     interface AppProfile {
         "match": MatchResults;
@@ -111,13 +115,17 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AppAbout {
+        "history"?: RouterHistory;
     }
     interface AppArticle {
+        "history"?: RouterHistory;
         "match"?: MatchResults;
     }
     interface AppArticles {
+        "history"?: RouterHistory;
     }
     interface AppHome {
+        "history"?: RouterHistory;
     }
     interface AppProfile {
         "match"?: MatchResults;

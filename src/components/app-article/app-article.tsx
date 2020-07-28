@@ -1,10 +1,10 @@
 import {Component, Host, Prop, h} from "@stencil/core";
-import {MatchResults} from "@stencil/router";
+import {MatchResults, RouterHistory} from "@stencil/router";
 
 import {BlogService} from "../../global/services/blog.service";
 
-import //   // registerViewWithTracking,
-"../../global/services/helper.utils";
+import {registerViewWithTracking} from "../../global/services/helper.utils";
+import {fileNotFound} from "../../global/site-structure-utils";
 
 import {
   BlogInterface,
@@ -17,12 +17,12 @@ import {
   shadow: true,
 })
 export class AppArticle {
-  // private fileNotFound = fileNotFound;
+  private fileNotFound = fileNotFound;
   private article: BlogInterface = {} as BlogInterface;
   private error: ErrorInterface = {} as ErrorInterface;
 
   @Prop() match: MatchResults;
-  // @Prop() history: RouterHistory;
+  @Prop() history: RouterHistory;
 
   async componentWillRender() {
     try {
@@ -31,16 +31,17 @@ export class AppArticle {
 
       // Update browser title & description
       document.title = `${article.title} - itsvicki.dev`;
-      // document
-      //   .querySelector('meta[name="description"]')
-      //   .setAttribute("content", product.browserDescription);
     } catch (err) {
-      // if (err.code === "NO_MATCH") {
-      //   this.fileNotFound();
-      // }
+      if (err.code === "NO_MATCH") {
+        this.fileNotFound();
+      }
 
       this.error = err;
     }
+  }
+
+  componentDidLoad() {
+    registerViewWithTracking(this.history.location.pathname);
   }
 
   render() {

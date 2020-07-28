@@ -1,11 +1,10 @@
-import {Component, h} from "@stencil/core";
+import {Component, h, Prop} from "@stencil/core";
+import {RouterHistory} from "@stencil/router";
 
 import {BlogService} from "../../global/services/blog.service";
 
-import {
-  defaultPageMetaDescription,
-  devToUrl,
-} from "../../global/site-structure-utils";
+import {registerViewWithTracking} from "../../global/services/helper.utils";
+import {devToUrl} from "../../global/site-structure-utils";
 
 import {
   BlogInterface,
@@ -18,9 +17,10 @@ import {
   shadow: true,
 })
 export class AppArticles {
-  private pageMetaDescription = defaultPageMetaDescription;
   private articles: BlogInterface[] = [];
   private error: ErrorInterface = {} as ErrorInterface;
+
+  @Prop() history: RouterHistory;
 
   async componentWillLoad() {
     try {
@@ -29,12 +29,13 @@ export class AppArticles {
 
       // Update title & description
       document.title = `Thoughts - itsvicki.dev`;
-      document
-        .querySelector('meta[name="description"]')
-        .setAttribute("content", this.pageMetaDescription);
     } catch (err) {
       this.error = err;
     }
+  }
+
+  componentDidLoad() {
+    registerViewWithTracking(this.history.location.pathname);
   }
 
   render() {

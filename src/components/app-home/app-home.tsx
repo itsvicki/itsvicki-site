@@ -1,4 +1,7 @@
-import {Component, h} from "@stencil/core";
+import {Component, h, Prop} from "@stencil/core";
+
+import {registerViewWithTracking} from "../../global/services/helper.utils";
+import {RouterHistory} from "@stencil/router";
 
 @Component({
   tag: "app-home",
@@ -6,6 +9,16 @@ import {Component, h} from "@stencil/core";
   shadow: true,
 })
 export class AppHome {
+  @Prop() history: RouterHistory;
+
+  constructor() {
+    document.title = `Home - itsvicki.dev`;
+  }
+
+  componentDidLoad() {
+    registerViewWithTracking(this.history.location.pathname);
+  }
+
   render() {
     return (
       <div class="app-home">
