@@ -11,7 +11,7 @@ exports.handler = async function (event) {
   return new Promise((resolve, reject) => {
     https
       .get(url, options, (res) => {
-        resolve(JSON.stringify(res));
+        resolve(JSON.stringify(res.data));
       })
       .on("error", (e) => {
         reject(Error(e));
