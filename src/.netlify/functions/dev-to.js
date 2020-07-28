@@ -10,7 +10,10 @@ exports.handler = function (event, context, callback) {
 
   https
     .get(url, options, (res) => {
-      callback(null, res.statusCode);
+      callback(null, {
+        statusCode: 200,
+        body: JSON.stringify(res.body),
+      });
     })
     .on("error", (e) => {
       callback(Error(e));
