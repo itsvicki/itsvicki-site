@@ -28,15 +28,16 @@ export class AppThoughts {
   @Prop() history: RouterHistory;
 
   async componentWillLoad() {
-    // Is this a article or articles
-    if (this.match.params.slug) {
-      this.urlSlug = this.match.params.slug;
-    }
-
     if (Build.isBrowser) {
       let browserTitle: string = ``;
 
+      // Is this a article or articles?
+      if (this.match.params.slug) {
+        this.urlSlug = this.match.params.slug;
+      }
+
       try {
+        // Fetch article(s) and set browser title
         if (this.urlSlug) {
           this.articleData = await BlogService.getArticle(
             this.match.params.slug
