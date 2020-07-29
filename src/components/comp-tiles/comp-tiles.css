@@ -80,6 +80,10 @@
   text-decoration: underline;
 }
 
+.tile a {
+  background: none;
+}
+
 /* 
   Custom list styles
 */

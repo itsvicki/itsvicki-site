@@ -2,19 +2,18 @@
 
 :host {
   display: block;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 0.5em;
+  margin-top: 80px;
 }
 
-@media only screen and (min-width: 500px) {
+/*@media only screen and (min-width: 500px) {
   :host {
     padding: 0 2em;
   }
-}
+} */
 
 h1 {
   text-align: center;
+  margin-top: 0;
 }
 
 img {

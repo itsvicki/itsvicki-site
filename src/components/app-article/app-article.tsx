@@ -1,15 +1,6 @@
 import {Component, Host, Prop, h} from "@stencil/core";
-import {MatchResults, RouterHistory} from "@stencil/router";
 
-import {BlogService} from "../../global/services/blog.service";
-
-import {registerViewWithTracking} from "../../global/services/helper.utils";
-import {fileNotFound} from "../../global/site-structure-utils";
-
-import {
-  BlogInterface,
-  ErrorInterface,
-} from "../../global/definitions/definitions";
+import {BlogInterface} from "../../global/definitions/definitions";
 
 @Component({
   tag: "app-article",
@@ -17,50 +8,22 @@ import {
   shadow: true,
 })
 export class AppArticle {
-  private fileNotFound = fileNotFound;
-  private article: BlogInterface = {} as BlogInterface;
-  private error: ErrorInterface = {} as ErrorInterface;
-
-  @Prop() match: MatchResults;
-  @Prop() history: RouterHistory;
-
-  async componentWillRender() {
-    try {
-      const article = await BlogService.getArticle(this.match.params.slug);
-      this.article = article;
-
-      // Update browser title & description
-      document.title = `${article.title} - itsvicki.dev`;
-    } catch (err) {
-      if (err.code === "NO_MATCH") {
-        this.fileNotFound();
-      }
-
-      this.error = err;
-    }
-  }
-
-  componentDidLoad() {
-    registerViewWithTracking(this.history.location.pathname);
-  }
+  @Prop() articleData: BlogInterface = {} as BlogInterface;
 
   render() {
-    const {errorMessage} = this.error;
-    const {article} = this;
+    const {articleData} = this;
+
+    if (!articleData) return;
 
     return (
       <Host>
-        {errorMessage ? (
-          <p>{errorMessage}</p>
-        ) : (
-          <article>
-            <header>
-              <h1>{article.title}</h1>
+        <article>
+          <header>
+            <h1>{articleData.title}</h1>
 
-              <div innerHTML={article.html}></div>
-            </header>
-          </article>
-        )}
+            <div innerHTML={articleData.html}></div>
+          </header>
+        </article>
       </Host>
     );
   }

@@ -52,6 +52,7 @@ nav a {
   text-transform: lowercase;
   text-decoration: none;
   color: var(--nav-link-colour);
+  background: none;
 }
 
 nav a:hover {

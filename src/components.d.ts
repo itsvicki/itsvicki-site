@@ -6,17 +6,16 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { MatchResults, RouterHistory, } from "@stencil/router";
-import { FactInterface, QAndAInterface, } from "./global/definitions/definitions";
+import { BlogInterface, FactInterface, QAndAInterface, } from "./global/definitions/definitions";
 export namespace Components {
     interface AppAbout {
         "history": RouterHistory;
     }
     interface AppArticle {
-        "history": RouterHistory;
-        "match": MatchResults;
+        "articleData": BlogInterface;
     }
     interface AppArticles {
-        "history": RouterHistory;
+        "articleData": BlogInterface[];
     }
     interface AppHome {
         "history": RouterHistory;
@@ -25,6 +24,10 @@ export namespace Components {
         "match": MatchResults;
     }
     interface AppRoot {
+    }
+    interface AppThoughts {
+        "history": RouterHistory;
+        "match": MatchResults;
     }
     interface CompFactCarousel {
         "announceItem": boolean;
@@ -78,6 +81,12 @@ declare global {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
     };
+    interface HTMLAppThoughtsElement extends Components.AppThoughts, HTMLStencilElement {
+    }
+    var HTMLAppThoughtsElement: {
+        prototype: HTMLAppThoughtsElement;
+        new (): HTMLAppThoughtsElement;
+    };
     interface HTMLCompFactCarouselElement extends Components.CompFactCarousel, HTMLStencilElement {
     }
     var HTMLCompFactCarouselElement: {
@@ -115,6 +124,7 @@ declare global {
         "app-home": HTMLAppHomeElement;
         "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
+        "app-thoughts": HTMLAppThoughtsElement;
         "comp-fact-carousel": HTMLCompFactCarouselElement;
         "comp-global-footer": HTMLCompGlobalFooterElement;
         "comp-global-header": HTMLCompGlobalHeaderElement;
@@ -127,11 +137,10 @@ declare namespace LocalJSX {
         "history"?: RouterHistory;
     }
     interface AppArticle {
-        "history"?: RouterHistory;
-        "match"?: MatchResults;
+        "articleData"?: BlogInterface;
     }
     interface AppArticles {
-        "history"?: RouterHistory;
+        "articleData"?: BlogInterface[];
     }
     interface AppHome {
         "history"?: RouterHistory;
@@ -140,6 +149,10 @@ declare namespace LocalJSX {
         "match"?: MatchResults;
     }
     interface AppRoot {
+    }
+    interface AppThoughts {
+        "history"?: RouterHistory;
+        "match"?: MatchResults;
     }
     interface CompFactCarousel {
         "announceItem"?: boolean;
@@ -162,6 +175,7 @@ declare namespace LocalJSX {
         "app-home": AppHome;
         "app-profile": AppProfile;
         "app-root": AppRoot;
+        "app-thoughts": AppThoughts;
         "comp-fact-carousel": CompFactCarousel;
         "comp-global-footer": CompGlobalFooter;
         "comp-global-header": CompGlobalHeader;
@@ -179,6 +193,7 @@ declare module "@stencil/core" {
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
             "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "app-thoughts": LocalJSX.AppThoughts & JSXBase.HTMLAttributes<HTMLAppThoughtsElement>;
             "comp-fact-carousel": LocalJSX.CompFactCarousel & JSXBase.HTMLAttributes<HTMLCompFactCarouselElement>;
             "comp-global-footer": LocalJSX.CompGlobalFooter & JSXBase.HTMLAttributes<HTMLCompGlobalFooterElement>;
             "comp-global-header": LocalJSX.CompGlobalHeader & JSXBase.HTMLAttributes<HTMLCompGlobalHeaderElement>;

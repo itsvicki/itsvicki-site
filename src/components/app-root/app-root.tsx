@@ -17,11 +17,11 @@ export class AppRoot {
               <stencil-route url="/" component="app-home" exact={true} />
               <stencil-route url="/about" component="app-about" />
               <stencil-route
-                url="/thoughts"
-                component="app-articles"
+                url={["/thoughts", "/thoughts/"]}
+                component="app-thoughts"
                 exact={true}
               />
-              <stencil-route url="/thoughts/:slug" component="app-article" />
+              <stencil-route url="/thoughts/:slug" component="app-thoughts" />
             </stencil-route-switch>
           </stencil-router>
         </main>

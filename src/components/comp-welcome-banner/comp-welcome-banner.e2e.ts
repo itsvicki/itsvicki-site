@@ -12,18 +12,6 @@ describe("comp-welcome-banner", () => {
     expect(element).toHaveClass("hydrated");
   });
 
-  it("contains a welcome banner with introduction", async () => {
-    const page = await newE2EPage();
-    await page.setContent("<comp-welcome-banner></comp-welcome-banner>");
-
-    const element = await page.find(
-      "comp-welcome-banner >>> .content .introduction"
-    );
-    expect(element.textContent).toEqual(
-      "Hej hej!I'm Vicki, a software engineer/manager passionate about accessibility whilst creating interactive and creative sites."
-    );
-  });
-
   it("contains a welcome banner with link to about", async () => {
     const page = await newE2EPage();
     await page.setContent("<comp-welcome-banner></comp-welcome-banner>");
@@ -33,6 +21,8 @@ describe("comp-welcome-banner", () => {
     expect(element.getAttribute("href")).toEqual("/about");
   });
 
+  // test with defining own config params - make sure config file has a different value
+  // and that different value is presented
   it("contains a welcome banner with quick link to github", async () => {
     const page = await newE2EPage();
     await page.setContent("<comp-welcome-banner></comp-welcome-banner>");
@@ -54,4 +44,6 @@ describe("comp-welcome-banner", () => {
     expect(element.textContent).toEqual("Vicki's LinkedIn page");
     expect(element.getAttribute("href")).toEqual(linkedInUrl);
   });
+
+  // Write test for clicking on links and it going to the page
 });

@@ -1,15 +1,5 @@
 import {Component, h, Prop} from "@stencil/core";
-import {RouterHistory} from "@stencil/router";
-
-import {BlogService} from "../../global/services/blog.service";
-
-import {registerViewWithTracking} from "../../global/services/helper.utils";
-import {devToUrl} from "../../global/site-structure-utils";
-
-import {
-  BlogInterface,
-  ErrorInterface,
-} from "../../global/definitions/definitions";
+import {BlogInterface} from "../../global/definitions/definitions";
 
 @Component({
   tag: "app-articles",
@@ -17,55 +7,29 @@ import {
   shadow: true,
 })
 export class AppArticles {
-  private articles: BlogInterface[] = [];
-  private error: ErrorInterface = {} as ErrorInterface;
-
-  @Prop() history: RouterHistory;
-
-  async componentWillLoad() {
-    try {
-      const articles: BlogInterface[] = await BlogService.getArticles();
-      this.articles = articles;
-
-      // Update title & description
-      document.title = `Thoughts - itsvicki.dev`;
-    } catch (err) {
-      this.error = err;
-    }
-  }
-
-  componentDidLoad() {
-    registerViewWithTracking(this.history.location.pathname);
-  }
+  @Prop() articleData: BlogInterface[] = {} as BlogInterface[];
 
   render() {
-    const {errorMessage} = this.error;
-    const {articles} = this;
+    const {articleData} = this;
+
+    if (!articleData) return;
 
     return (
       <host>
-        <h1>Thoughts</h1>
-        <p>
-          Feed from{" "}
-          <a href={devToUrl} target="_blank" rel="noopener noreferrer">
-            dev.to
-          </a>
-        </p>
-
-        {errorMessage ? (
-          <p>{errorMessage}</p>
-        ) : (
+        {articleData ? (
           <div class="articles">
-            {articles.map((article) => (
+            {articleData.map((data) => (
               <article>
                 <h2>
-                  <stencil-route-link url={`/thoughts/${article.slug}`}>
-                    {article.title}
+                  <stencil-route-link url={`/thoughts/${data.slug}`}>
+                    {data.title}
                   </stencil-route-link>
                 </h2>
               </article>
             ))}
           </div>
+        ) : (
+          <p>Loading...</p>
         )}
       </host>
     );

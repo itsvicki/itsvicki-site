@@ -1,0 +1,26 @@
+@import "../../global/variables.css";
+
+:host {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  /* padding: 0 80px; */
+}
+
+@media only screen and (min-width: 500px) {
+  :host {
+    padding: 0 2em;
+  }
+}
+
+h1 {
+  text-align: center;
+}
+
+h1 + p {
+  text-align: center;
+  font-style: italic;
+}
