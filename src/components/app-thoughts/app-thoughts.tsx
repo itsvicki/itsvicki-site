@@ -32,7 +32,7 @@ export class AppThoughts {
       let browserTitle: string = ``;
 
       // Is this a article or articles?
-      if (this.match.params.slug) {
+      if (this.match.params && this.match.params.slug) {
         this.urlSlug = this.match.params.slug;
       }
 
