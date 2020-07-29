@@ -201,7 +201,7 @@ export class AppAbout {
             to meet WCAG 2.0 guidelines by law.
           </p>
           <p>
-            I have gained experience as both a software engineer as well as an
+            I've gained experience as both a software engineer as well as an
             engineering manager - currently working as a senior software
             engineer.
           </p>
@@ -231,12 +231,14 @@ export class AppAbout {
           </p>
 
           <h3>Additional experience / personal projects</h3>
-          <ul>
-            <li>Web Components + Stencil.js</li>
-            <li>React</li>
-            <li>CSS modules</li>
-            <li>Javascript/Typescript</li>
-          </ul>
+          <p>
+            <ul>
+              <li>Web Components + Stencil.js</li>
+              <li>React</li>
+              <li>CSS modules</li>
+              <li>Javascript/Typescript</li>
+            </ul>
+          </p>
         </div>
         <br />
         <br />
