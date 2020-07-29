@@ -11,12 +11,6 @@
 }
 
 footer {
-  display: flex;
-  flex-direction: column;
-  place-content: center;
-  text-align: center;
-  flex: 1;
-
   max-width: 800px;
   margin: 10vh auto 0 auto;
   padding: 40px;
@@ -24,15 +18,39 @@ footer {
   border-top: 1px solid var(--border-colour);
 }
 
-footer a {
-  display: block;
-  margin-bottom: 5px;
-  /* flex: 1; */
+.quick-links {
+  display: flex;
+  place-content: flex-end;
+  text-align: center;
+  flex: 1;
+}
 
-  /* background: linear-gradient(
-    180deg,
-    transparent 0.9em,
-    hsl(31, 55%, 68%) 0,
-    hsl(31, 55%, 68%)
-  ); */
+a {
+  height: 20px;
+  width: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px 20px;
+  margin: 0;
+}
+
+a {
+  margin-left: 1em;
+}
+
+.github {
+  background-image: var(--git-icon);
+  filter: brightness(0.1);
+}
+
+.linkedin {
+  background-image: var(--linkedin-icon);
+  filter: brightness(0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .github,
+  .linkedin {
+    filter: brightness(100);
+  }
 }

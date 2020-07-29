@@ -12,14 +12,17 @@ export class CompGlobalFooter implements ComponentInterface {
     return (
       <host>
         <footer>
-          <h3>Some other things...</h3>
-          <p>
-            <a href={githubUrl} target="_blank" rel="noopener noreferrer">
-              hop to the code.
+          <p class="quick-links">
+            <a href={githubUrl} class="github" target="_blank" rel="noopener">
+              <span class="screen-reader-only">Vicki's Github page</span>
             </a>
-            {/* <span aria-hidden="true">|</span> */}
-            <a href={linkedInUrl} target="_blank" rel="noopener noreferrer">
-              best place to chat.
+            <a
+              href={linkedInUrl}
+              class="linkedin"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="screen-reader-only">Vicki's LinkedIn page</span>
             </a>
           </p>
         </footer>
