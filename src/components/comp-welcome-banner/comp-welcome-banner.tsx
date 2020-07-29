@@ -42,7 +42,8 @@ export class CompWelcomeBanner {
             </p>
           </div>
         </div>
-        {/* TODO: Add alt content & change this for a more landscape img? */}
+
+        {/* Selfie */}
         <div class="moi">
           <picture>
             <source
@@ -50,9 +51,14 @@ export class CompWelcomeBanner {
               type="image/webp"
               media="(min-width: 600px)"
             />
-            <img src="/assets/img/selfie-new.jpg" alt="" />
+            <img
+              src="/assets/img/selfie-new.jpg"
+              alt="A photo of Vicki with a background of Stockholm and its sunset."
+            />
           </picture>
         </div>
+
+        {/* Water */}
         <div class="watercolour">
           <picture>
             <source
