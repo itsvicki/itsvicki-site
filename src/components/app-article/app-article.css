@@ -4,10 +4,10 @@
   display: block;
   margin-top: 80px;
   padding: 0 0.5em;
+  text-align: left;
 }
 
 h1 {
-  text-align: center;
   margin-top: 0;
 }
 
