@@ -26,6 +26,10 @@ a.skip-main:active {
   text-align: center;
 }
 
+a {
+  background: none;
+}
+
 /*
   Navs
 */
@@ -52,7 +56,6 @@ nav a {
   text-transform: lowercase;
   text-decoration: none;
   color: var(--nav-link-colour);
-  background: none;
 }
 
 nav a:hover {
