@@ -12,10 +12,16 @@
 
 footer {
   max-width: 800px;
-  margin: 10vh auto 0 auto;
+  margin: 10vh 10vw 0 10vw;
   padding: 40px;
 
   border-top: 1px solid var(--border-colour);
+}
+
+@media only screen and (min-width: 1000px) {
+  footer {
+    margin: 10vh auto 0 auto;
+  }
 }
 
 .quick-links {
