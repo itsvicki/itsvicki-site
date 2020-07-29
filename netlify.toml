@@ -8,3 +8,8 @@
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
+
+[[redirects]]
+  from = "/thoughts/*"
+  to = "/thoughts"
+  status = 301
