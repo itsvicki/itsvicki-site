@@ -1,11 +1,6 @@
 @import "../../global/variables.css";
 
-/* 
-  Articles 
-*/
 .articles {
   margin-top: 80px;
-}
-
-.article {
+  padding: 0 0.5em;
 }
