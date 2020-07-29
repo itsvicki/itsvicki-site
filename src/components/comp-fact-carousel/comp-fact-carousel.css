@@ -113,6 +113,10 @@
   text-align: left;
 }
 
+.slides [aria-hidden="true"] {
+  display: none !important;
+}
+
 /*
   Nav
 */
