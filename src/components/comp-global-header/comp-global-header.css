@@ -64,4 +64,5 @@ header a:hover {
 
 header a.active {
   color: var(--nav-active-link-colour);
+  font-weight: bold;
 }

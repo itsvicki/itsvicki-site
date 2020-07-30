@@ -4,6 +4,7 @@
   --primary-black: #323a45;
   --primary-white: #ffffff;
   --secondary-white: #f7f7f7;
+  --primary-purple: #654d48;
 
   /* Dark mode */
   --primary-grey: #292929;
@@ -16,7 +17,7 @@
   --main-background: var(--secondary-white);
 
   --nav-link-colour: var(--primary-black);
-  --nav-active-link-colour: var(--primary-orange);
+  --nav-active-link-colour: var(--primary-purple);
 
   --h1-colour: var(--primary-orange);
   --h2-colour: var(--primary-pink);
