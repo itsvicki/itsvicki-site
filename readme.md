@@ -11,7 +11,7 @@ Personal website, [itsvicki.dev](https://itsvicki.dev).
 
 ## Getting Started
 
-To run locally with Netlify API (requires Netlify CLI + set-up):
+To run locally with Netlify API (dependency on Netlify CLI + set-up):
 
 ```bash
 npm run netlify-dev
