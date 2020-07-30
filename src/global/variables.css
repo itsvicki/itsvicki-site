@@ -151,6 +151,9 @@ button {
   cursor: pointer;
 }
 
+/*
+  Accessibility
+*/
 .screen-reader-only {
   position: absolute;
   left: -10000px;
@@ -158,4 +161,28 @@ button {
   width: 1px;
   height: 1px;
   overflow: hidden;
+}
+
+/*
+  Animation
+*/
+img.hide {
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation-name: fadeIn;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-delay: 0.25s;
 }

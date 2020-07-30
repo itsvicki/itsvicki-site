@@ -15,7 +15,7 @@ export class CompWelcomeBanner {
     for (let el of this.refs.values()) {
       el.addEventListener("load", () => {
         el.classList.remove("hide");
-        el.classList.add("fadeIn");
+        el.classList.add("fade-in");
       });
     }
   }

@@ -21,6 +21,7 @@ export interface BlogInterface {
   slug: string;
   body_markdown: any;
   html: any;
+  cover_image: string;
 }
 
 export interface ErrorInterface {

@@ -4,3 +4,15 @@
   margin-top: 80px;
   padding: 0 0.5em;
 }
+
+article {
+  margin: 50px 0;
+}
+
+article:first-child {
+  margin-top: 0;
+}
+
+article:last-child {
+  margin-bottom: 0;
+}
