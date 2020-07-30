@@ -1,14 +1,15 @@
 {
-  "name": "canny-dev",
+  "name": "its-vicki",
   "private": true,
   "version": "0.0.1",
-  "description": "Stencil App Starter",
+  "description": "Personal website - itsvicki.dev",
   "scripts": {
+    "netlify-dev": "netlify dev",
     "build": "stencil build",
     "build-prerender": "stencil build --prerender",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
-    "test.watch": "stencil test --spec --e2e --watchAll",
+    "test-watch": "stencil test --spec --e2e --watchAll",
     "test.show": "stencil test --spec --e2e --devtools",
     "generate": "stencil generate"
   },

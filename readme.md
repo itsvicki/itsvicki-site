@@ -1,6 +1,21 @@
 # itsvicki.dev
 
+Personal website, [itsvicki.dev](https://itsvicki.dev).
+
+## Tech details
+
+- Made with Web Components + StencilJS
+- CSS modules
+- Dev.to article feed utilising Netlify functions to ensure API key is private
+- Dark mode support
+
 ## Getting Started
+
+To run locally with Netlify API:
+
+```bash
+npm run netlify-dev
+```
 
 To run:
 
@@ -29,5 +44,5 @@ npm test
 To run the unit tests and watch for file changes during development, run:
 
 ```
-npm run test.watch
+npm run test-watch
 ```
