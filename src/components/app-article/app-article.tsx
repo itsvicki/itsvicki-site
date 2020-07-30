@@ -37,6 +37,7 @@ export class AppArticle {
               <img
                 src={articleData.cover_image}
                 alt=""
+                class="cover-image"
                 ref={(el) => refs.set(1, el as HTMLElement)}
               />
             )}
