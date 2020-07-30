@@ -8,9 +8,23 @@ import {githubUrl, linkedInUrl} from "../../global/site-structure-utils";
   shadow: true,
 })
 export class CompWelcomeBanner {
+  private refs = new Map();
+
+  componentDidLoad() {
+    // Fade in when the image loads
+    for (let el of this.refs.values()) {
+      el.addEventListener("load", () => {
+        el.classList.remove("hide");
+        el.classList.add("fadeIn");
+      });
+    }
+  }
+
   render() {
+    const {refs} = this;
+
     return (
-      <section class="banner">
+      <section class={{banner: true}}>
         <div class="content">
           <div class="content-inner space-text">
             <h1 class="screen-reader-only">Introduction</h1>
@@ -54,6 +68,8 @@ export class CompWelcomeBanner {
             <img
               src="/assets/img/selfie-new.jpg"
               alt="A photo of Vicki with a background of Stockholm and its sunset."
+              class="hide"
+              ref={(el) => refs.set(1, el as HTMLElement)}
             />
           </picture>
         </div>
@@ -66,7 +82,12 @@ export class CompWelcomeBanner {
               type="image/webp"
               media="(min-width: 600px)"
             />
-            <img src="/assets/icon/watercolour-3-min.png" alt="" />
+            <img
+              src="/assets/icon/watercolour-3-min.png"
+              alt=""
+              class="hide"
+              ref={(el) => refs.set(2, el as HTMLElement)}
+            />
           </picture>
         </div>
         <div class="watercolour-2">
@@ -81,7 +102,12 @@ export class CompWelcomeBanner {
               type="image/webp"
               media="(min-width: 600px)"
             />
-            <img src="/assets/icon/watercolour-2-min.png" alt="" />
+            <img
+              src="/assets/icon/watercolour-2-min.png"
+              alt=""
+              class="hide"
+              ref={(el) => refs.set(3, el as HTMLElement)}
+            />
           </picture>
         </div>
       </section>
