@@ -21,7 +21,7 @@ describe("comp-welcome-banner", () => {
     expect(element.getAttribute("href")).toEqual("/about");
   });
 
-  // test with defining own config params - make sure config file has a different value
+  // TOOD: test with defining own config params - make sure config file has a different value
   // and that different value is presented
   it("contains a welcome banner with quick link to github", async () => {
     const page = await newE2EPage();
@@ -45,5 +45,5 @@ describe("comp-welcome-banner", () => {
     expect(element.getAttribute("href")).toEqual(linkedInUrl);
   });
 
-  // Write test for clicking on links and it going to the page
+  // TODO: Write test for clicking on links and it going to the page
 });
