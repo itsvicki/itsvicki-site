@@ -45,6 +45,7 @@
 
     --main-background: var(--primary-grey);
     --nav-link-colour: var(--primary-white);
+    --nav-active-link-colour: var(--primary-orange);
 
     --p-colour: var(--primary-white);
   }
