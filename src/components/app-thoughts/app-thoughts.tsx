@@ -3,7 +3,10 @@ import {RouterHistory, MatchResults} from "@stencil/router";
 
 import {BlogService} from "../../global/services/blog.service";
 
-import {registerViewWithTracking} from "../../global/services/helper.utils";
+import {
+  registerViewWithTracking,
+  setCanonicalUrl,
+} from "../../global/services/helper.utils";
 import {devToUrl, fileNotFound} from "../../global/site-structure-utils";
 
 import {
@@ -37,15 +40,17 @@ export class AppThoughts {
       }
 
       try {
-        // Fetch article(s) and set browser title
+        // Fetch article(s) and set browser title & canonical url
         if (this.urlSlug) {
           this.articleData = await BlogService.getArticle(
             this.match.params.slug
           );
           browserTitle = `${this.articleData.title} - itsvicki.dev`;
+          setCanonicalUrl(this.articleData.url);
         } else {
           this.articlesData = await BlogService.getArticles();
           browserTitle = `Thoughts - itsvicki.dev`;
+          setCanonicalUrl();
         }
 
         // Update title & description

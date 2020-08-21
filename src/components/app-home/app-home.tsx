@@ -1,7 +1,10 @@
 import {Component, h, Prop} from "@stencil/core";
 import {RouterHistory} from "@stencil/router";
 
-import {registerViewWithTracking} from "../../global/services/helper.utils";
+import {
+  registerViewWithTracking,
+  setCanonicalUrl,
+} from "../../global/services/helper.utils";
 
 @Component({
   tag: "app-home",
@@ -13,6 +16,7 @@ export class AppHome {
 
   constructor() {
     document.title = `Home - itsvicki.dev`;
+    setCanonicalUrl();
   }
 
   componentDidLoad() {

@@ -22,6 +22,7 @@ export interface BlogInterface {
   body_markdown: any;
   html: any;
   cover_image: string;
+  url: string;
 }
 
 export interface ErrorInterface {

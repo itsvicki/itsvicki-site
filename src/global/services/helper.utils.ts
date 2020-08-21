@@ -65,4 +65,29 @@ const registerViewWithTracking = (page: string): void => {
   }
 };
 
-export {moveUserFocusToEl, registerViewWithTracking};
+/**
+ * Set canonical url or remove el if no URL specified
+ *
+ * @param url
+ */
+const setCanonicalUrl = (url: string = ""): void => {
+  let canonicalEl = document.querySelector("link[rel='canonical']");
+  console.log(canonicalEl);
+
+  // If no URL, ensure the canonical el does not exist any more
+  if (url === "") {
+    if (canonicalEl) canonicalEl.remove();
+
+    return;
+  }
+
+  // If URL supplied, ensure the el is updated
+  if (!canonicalEl) canonicalEl = document.createElement("link");
+
+  canonicalEl.setAttribute("rel", "canonical");
+  canonicalEl.setAttribute("href", url);
+
+  document.head.appendChild(canonicalEl);
+};
+
+export {moveUserFocusToEl, registerViewWithTracking, setCanonicalUrl};

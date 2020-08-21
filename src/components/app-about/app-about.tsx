@@ -3,7 +3,10 @@ import {RouterHistory} from "@stencil/router";
 
 import {QAndAInterface} from "../../global/definitions/definitions";
 
-import {registerViewWithTracking} from "../../global/services/helper.utils";
+import {
+  registerViewWithTracking,
+  setCanonicalUrl,
+} from "../../global/services/helper.utils";
 
 import {linkedInUrl} from "../../global/site-structure-utils";
 
@@ -147,6 +150,7 @@ export class AppAbout {
 
   constructor() {
     document.title = `About - itsvicki.dev`;
+    setCanonicalUrl();
   }
 
   componentDidLoad() {
